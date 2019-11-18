@@ -1,0 +1,14 @@
+# Ignore Excel files
+*.xlsx
+*.xlsm
+
+# Except for this Excel file
+!do_not_ignore_this.xlsm
+
+# Ignore .png-files except one
+*.png
+!important_img.png
+
+# Ignore this entire folder
+tests/testdata
+
