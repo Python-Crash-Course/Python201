@@ -262,7 +262,7 @@ The pinnacle of collaboration
 
 
 ---
-![bg right:30% 85%](img/Branching_and_Merging/Branching_step1.svg)
+![bg right:30% 80%](img/Branching_and_Merging/Branching_step1.svg)
 
 ## Branching illustrated 1/4
 Branching is best explained by an example.
@@ -277,7 +277,7 @@ The figure to the right depicts the scenario.
 > **Note:** `HEAD` is a reference to the currently checked out commit
 
 ---
-![bg right 90%](img/Branching_and_Merging/Branching_step2.svg)
+![bg right 85%](img/Branching_and_Merging/Branching_step2.svg)
 
 ## Branching illustrated 2/4
 
@@ -310,14 +310,14 @@ This switched us to the new `feature` branch with the same `commit` **C1**
 
 Now we want to start making the changes to implement our feature.
 
-5. Change some file(s) and run 
+5. We make changes over two commits via
 ```css
 git commit
 ```
 
-This creates a new `commit` **C2**.
+This creates `commits` **C2** and **C3**.
 
-*The **C2** `commit` might have made `master` unstable had it been done on that branch. But we are safe to experiment on our `feature` branch.* 
+***C2** and **C3** might have made `master` unstable had it been done on that branch. But we are safe to experiment on our `feature` branch.* 
 
 ---
 <!-- _paginate: false -->
@@ -353,9 +353,9 @@ Both `feature` and `master` has new commits beyond **C1** which are  conflicting
 
 ## Auto merge: Fast-forward
 
-We can seamlessly merge branch `feature` into branch `master` by simply moving `commit` **C2** to `master`. 
+We can seamlessly merge branch `feature` into branch `master` by simply moving **C2** and **C3** to `master`. 
 
-This is because `mater` is unchanged since branch `feature` was created. 
+This is because `mater` is unchanged since branch `feature` was created. *The history is linear.*
 
 ```css
 git checkout master
@@ -381,14 +381,16 @@ git merge master
 ![bg right:42% 95%](img/Branching_and_Merging/Merging_conflict.svg)
 ## Merge conflict
 
-Suppose the `commits` **C2** and **C3** has conflicting changes. 
+Suppose the `commits` **C3** and **C4** has conflicting changes. 
 
 There is is no way for Git to know which change to keep during `merge`.
 
-Thus, ***the user*** must 
+Thus, **the user** must 
 1. resolve the `merge conflict` manually 
 2. `commit` the changes
 3. `merge` again 
+
+Merge conflicts can be resolved in the editor.
 
 ---
 
@@ -479,17 +481,9 @@ git init
 ```
 ---
 <!-- _class: center-content -->
-## VS Code Source control tab
-![width:775pt](img/VSCode/source_control_tab.png)
+## VS Code - Source control tab
+![width:850pt](img/VSCode/source_control_tab.png)
 
-
----
-
-## Normal workflow demonstrated in VS Code
-
-Once you have a project setup properly with a local Git repository and a remote to push to, the standard workflow will be something like:
-
-___TODO: If real fancy create a gif___
 
 ---
 <!-- _paginate: false -->
@@ -504,10 +498,11 @@ Not optimal
 
 ## Binary files
 
-Non-text files are so-called ***binary files*** in Git's eyes.
+* Non-text files are so-called **binary files** in Git's eyes.
 
-They can not be mea
+* They can not be meaningfully compared from commit to commit.
 
+This creates a problem for merging, since the merging algorithm needs to compare the tip commit on the two branches to be merged with their common ancestor commit. When the difference between the commits can't be determined, merging always results in a conflict. **You need to retain one branch or the other**. 
 
 ---
 
@@ -520,25 +515,29 @@ They can not be mea
 
 * User must choose one or the other to keep and discard the other
 
-* Excel, word and PowerPoint files have same problems (also binary)  
+* Excel, word and PowerPoint files are also binary  
 
 ![bg right:45% 90%](img/Non_text_files/wall_how_to_merge.jpg)
 
 
 ---
 
-So to sum up:
+## Summary
 
-> Git can version control binary files, but it has some limitations.
-> * Git cannot create meaningful ***diffs*** of binary files, which makes it hard to view changes from one commit to the next.  
-> * As a consequence, Git cannot automatically ***merge*** two diverged branches, i.e. two branches that were both committed to after they split. In that case it must be manually chosen which branch is the right one to continue with. 
+Git can version control binary files, but it has some limitations.
+* Git cannot create meaningful **diffs** of binary files, which makes it hard to view changes from one commit to the next.  
+* As a consequence, Git cannot automatically **merge** two diverged branches, i.e. two branches that were both committed to after they split. In that case it must be manually chosen which branch is the right one to continue with. 
 
 ---
 
-Recall that for text files, Git can automatically merge changes for diverged branches provided there are not conflicts. Conflicts occur if the branches to be merged were changed in the exact same place. In the case of a merge conflict with text files, resolving the conflict is done by comparing the two branches. The branches to be merged can easily be compared line by line e.g. in an editor. 
+## Side note: Why is this not a PowerPoint?
 
-### Why is this not a PowerPoint?
-PowerPoints (`.ppt`-flies) are binary
+This slide show is written in markdown via an extension for VS Code.
+
+Markdown is an easy language for writing text documents. Since it's a pure text file, it can be properly version controlled with Git. 
+
+
+> Note: PowerPoints (`.ppt`-flies) are binary
 
 ---
 <!-- _paginate: false -->
@@ -579,8 +578,10 @@ And references
 | Link     | Description      |
 | :----| :---- |
 | [Ressourcces to learn Git](https://try.github.io/) | _GitHub guides for Git_ |
+| [GitHub For Beginners: Don’t Get Scared, Get Started](https://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1/) | _Article on Git and GitHub (nicely explained)_ |
 | [Pro Git](https://git-scm.com/book/en/v2) | _Book on Git written by experts_ |
 | [`.gitignore` examples](https://git-scm.com/book/en/v2) | _Good examples of `.gitignore` files for various languages_ |
+
 
 ---
 <!-- _paginate: false -->
@@ -593,9 +594,11 @@ Get started with Git for this course
 ---
 
 ## Purpose
-The idea for the rest of the course is to integrate Git into all the subsequent session. We'll use Git for version controlling our code for solving the exercises.
+The idea for the rest of the course is to integrate Git into all the subsequent sessions. We'll use Git for version controlling our code when solving the exercises.
 
-By the end of the course we should be pretty familiar with how Git works.
+By the end of the course we should be pretty familiar with how Git works and feel comfortable using it going forward.
+
+If you haven't installed Git yet you can do so from [here](https://git-scm.com/download/win).
 
 ---
 
@@ -630,7 +633,7 @@ git init
 
 You can also do this from VS Code if you want as shown in the slides above.
 
-*Recall that this creates a hidden directory called `.git`, which will store all metadata about the project's version history.*  
+*Recall that initializing a repository creates a hidden directory called `.git`, which will store all metadata about the project's version history.*  
 
 ---
 
@@ -642,18 +645,16 @@ You probably want to store some files in the Git repository that you don't want 
 ```css
 touch .gitignore
 ```
-Put the files and folder you want to ignore inside it. Use the example file from the slide about ignoring files as basis.
+
+Leave it empty for now.
 
 ---
 
 ## Exercise 4
 
+Markdown is a way to create simple and good looking text documents. It's often used for introducing projects in a `README.md` file, which is shown on GitHub. 
 
-Markdown is a simple way to create good looking text documents. It's often used for introducing projects in a `README.md` file, which is shown on GitHub. 
-
-See a guide for markdown [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-**Create a markdown file `README.md` in the root directory** and write something in it. E.g. explain what the purpose of the repository. ***TODO: DON'T WRITE SOMETHING BEFORE COMITTING, THE CHANGES SHOULD BE THE COMMIT!!!***
+**Create a markdown file `README.md` in the root directory**. Leave it empty for now.
 
 You can either create the file by the `touch` command or manually, e.g. via the editor. 
 
@@ -662,9 +663,9 @@ You can either create the file by the `touch` command or manually, e.g. via the 
 
 ## Exercise 5
 
-Now you have created two files and modified them. Git has tracked this.
+Now you have created two files and modified them, and Git has tracked this.
 
-### VS Code
+### VS Code view
 
 If you are using VS Code, check the Source Control tab on the left pane. The CHANGES tab will reveal all modified files that are not ignored via `.gitignore`.
 
@@ -672,7 +673,7 @@ However, **the files are not yet under version control**. The green **U** denote
 
 
 ---
-### Git Bash
+### Git Bash view
 ![bg right:65% 90%](img/Exercises/git_status.png)
 If you are using Git Bash, you can get the same information by typing 
 ```css
@@ -682,26 +683,197 @@ See the entire history of what we did so far in the image.
 
 ---
 
-Stage `README.md` to get it ready to go into the next `commit`
+**Stage the files `README.md` and `.gitignore`** to get them ready to go into the next `commit`.
+
+1. You use press `+` in VS Code to `add` files to the staging area (see screenshot from VS Code Source tab in previous slide)
+
+2. Equivalent commands in Git Bash is 
 ```css
-git add README.md
+git add README.md .gitignore
 ```
-
-
-
-Add the two files
+You can also stage **all** files by
+```css
+git add .
+```
 
  
 ---
 
-## Exercise 5
+## Exercise 6
 
-3. Write a message and `commit` the changes
+Now the new files are in the staging area ready to be committed.
+
+**Write a message and `commit` it:**
 ```css
 git commit -m "First commit"
 ```
 
 
-Recall that a `commit` creates a *snapshot* of the state of the repository. It *locks* in the changes. This points can be reverted to at any time.
+Recall that a `commit` creates a **snapshot** of the state of the repository. It **locks** in the changes. This points can be reverted to or branched out from at any time.
+
+---
+
+## Exercise 7
+
+**Open the `.gitignore` file and put the files and folders you want Git to ignore inside it**. Use the example file from the slide about ignoring files as basis.
+
+If you are using VS Code you should see the Source Control tab update to `.gitignore` to now be *modified* since last commit.
+
+When you are satisfied with the `.gitignore` file, `stage` the changes and `commit` the file with a fitting message. 
+
+---
+
+## Exercise 8
+
+All previous exercises have been dealing with the `master` branch. When `git init` is executed, the repo starts out with only that branch.
+
+**Create a branch called `readme`**
+
+```css
+git branch readme
+```
+
+**And switch from the `master` branch to  the `readme` branch**
+
+```css
+git checkout readme
+```
+> **Note 1:** These steps can be done in one go by `git checkout -b readme`
+> **Note 2:** You can also do this directly from VS Code from the bottom left corner
 
 
+
+---
+
+## Exercise 9
+
+In VS Code you can see that the current branch changed to `readme`. In Git Bash you can get the same info by running `git branch`.
+
+**Open the markdown file `README.md` and write something in it.** 
+A README is often used in repositories on GitHub to explain what the repository is and how it can be used. You could put a text that explains the purpose of your repository.
+
+See a guide for writing markdown [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
+**When you reach a state you want to record, `stage` the changes and `commit` with a message.**
+
+Make as many commits as you desire. It's a good idea to commit often, keep commits in logical chunks and write concise and clear messages. 
+
+---
+
+## Exercise 10
+
+You have now done a number of commits on the `readme` branch. Suppose you are done working with it for now. It's time to `merge` the changes into `master`. 
+
+Recall that merging has to be done from the branch that wis to be merged *into*.
+
+**Checkout the `master` branch**
+
+```css
+git checkout master
+```
+
+**And merge the `readme` branch into it**
+
+```css
+git merge readme
+```
+
+> Question: What kind of merge operation will be applied in this scenario?
+
+---
+
+## Recap - Diagram of exercise flow
+
+The following slides try to depict the workflow of solving the above exercises.
+
+Commands are written for reference.
+
+The diagrams represent the situation **after** the commands are executed.
+
+Commit messages are written next to each commit.
+
+The diagrams star from Exercise 6 as that is where the first `commit` happens.
+
+---
+![bg right 65%](img/Exercises/exercise_6.svg)
+## Exercise 6 - diagram
+
+```css
+git commit -m "First commit"
+```
+
+
+---
+![bg right 70%](img/Exercises/exercise_7.svg)
+## Exercise 7 - diagram
+
+```css
+git commit -m 
+"Add files to gitignore"
+```
+
+
+---
+![bg right 90%](img/Exercises/exercise_8.svg)
+## Exercise 8 - diagram
+
+```css
+git branch readme
+```
+```css
+git checkout readme
+```
+
+Alternatively in a single command
+```css
+git checkout -b readme
+```
+---
+![bg right:65% 90%](img/Exercises/exercise_9.svg)
+## Exercise 9 - diagram
+
+```css
+git commit -m 
+"Add title and 
+short description"
+```
+
+```css
+git commit -m 
+"Add description 
+for Session 0"
+```
+
+
+```css
+git commit -m 
+"Add location and dates 
+for course to intro text"
+```
+
+---
+![bg right:65% 90%](img/Exercises/exercise_10_ff_merge.svg)
+## Exercise 10 - diagram
+
+Switch to `master` to `merge` into it
+```css
+git checkout master
+```
+
+```css
+git merge readme
+```
+
+Fast-forward `merge` as branches have not diverged.
+
+--- 
+![bg right:65% 100%](img/Exercises/exercise_10_no_ff_merge.svg)
+## Exercise 10 - diagram 
+
+Alternative without fast-forward
+
+```css
+git merge --no-ff readme
+```
+
+Creates a new `merge commit` on `master`.
