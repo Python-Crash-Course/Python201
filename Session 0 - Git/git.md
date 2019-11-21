@@ -792,7 +792,7 @@ The diagrams represent the situation **after** the commands are executed.
 
 Commit messages are written next to each commit.
 
-The diagrams star from Exercise 6 as that is where the first `commit` happens.
+The diagrams start from Exercise 6 as that is where the first `commit` happens.
 
 ---
 ![bg right 65%](img/Exercises/exercise_6.svg)
@@ -868,9 +868,9 @@ Fast-forward `merge` as branches have not diverged.
 
 --- 
 ![bg right:65% 100%](img/Exercises/exercise_10_no_ff_merge.svg)
-## Exercise 10 - diagram 
+## Exercise 10 - diagram (2)
 
-Alternative without fast-forward
+Alternative `merge` without fast-forward
 
 ```css
 git merge --no-ff readme
