@@ -126,7 +126,6 @@ Red operations
 
 <img src="img/GitBasics/Status_of_files.png" alt="alt text" width="500">
 
-
 ## Three local states
 
 A file that is **tracked** inside a Git repository can be in three states:
@@ -158,7 +157,6 @@ The `.gitignore` file inside the repository controls what is being version contr
 <img src="img/GitBasics/gitignore_example.png" alt="alt text" width="300">
 
 # Branching
-
 
 ## Branching illustrated 1/4
 
@@ -203,9 +201,6 @@ This switched us to the new `feature` branch with the same `commit` **C1**
 
 ![alt text](img/Branching_and_Merging/Branching_step3.svg)
 
----
-
-
 ## Branching illustrated 4/4
 
 Now we want to start making the changes to implement our feature.
@@ -240,8 +235,6 @@ Both `feature` and `master` has new commits beyond **C1** which are not conflict
 
 3. **Merge conflict**
 Both `feature` and `master` has new commits beyond **C1** which are  conflicting
-
----
 
 ## Auto merge: Fast-forward
 
@@ -321,15 +314,11 @@ Merge conflicts can be resolved in the editor.
 
 ## Simple workflow example
 
-![width:600pt](img/Workflow/Simple_workflow.svg)
-
----
-<!-- _class: center-content -->
+![alt text](img/Workflow/Simple_workflow.svg)
 
 ## Advanced workflow example (often referred to as Git Flow)
 
-![width:750pt](img/Workflow/GitFlow.png)
-
+![alt text](img/Workflow/GitFlow.png)
 
 # Git in VS Code
 
@@ -340,9 +329,6 @@ Git Bash (the command line interface) is the original way of working with Git. I
 However, **all the popular editors have Git integration build in**, which includes the vast majority of functionality for basic users. It's arguably an easier way to get into the workflow for beginners.
 
 Visual Studio Code has great Git integration!
-
----
-
 
 ## Start tracking your own project
 
@@ -455,7 +441,7 @@ Create a new directory to store the contents you produce for this course. Inside
 git init
 ```
 
-You can also do this from VS Code, as shown in the previous   slides, if you want.
+You can also do this from VS Code, as shown in the previously, if you want.
 
 *Recall that initializing a repository creates a hidden directory called `.git`, which will store all metadata about the project's version history.*
 
@@ -470,8 +456,6 @@ touch .gitignore
 ```
 
 Leave it empty for now.
-
----
 
 ## Exercise 4
 
@@ -535,7 +519,7 @@ Recall that a `commit` creates a **snapshot** of the state of the repository. It
 
 ## Exercise 7
 
-**Open the `.gitignore` file and put the files and folders you want Git to ignore inside it**. Use the example file from the slide about ignoring files as basis.
+**Open the `.gitignore` file and put the files and folders you want Git to ignore inside it**. Use the example file shown previously about ignoring files as basis.
 
 If you are using VS Code you should see the Source Control tab update to `.gitignore` to now be *modified* since last commit.
 
@@ -595,7 +579,7 @@ git merge readme
 
 ## Recap - Diagram of exercise flow
 
-The following slides try to depict the workflow of solving the above exercises.
+The following tries to depict the workflow of solving the above exercises.
 
 Commands are written for reference.
 
@@ -605,7 +589,6 @@ Commit messages are written next to each commit.
 
 The diagrams starts from Exercise 6, as that is where the first `commit` happens.
 
-
 ## Exercise 6 - diagram
 
 ```markdown
@@ -613,7 +596,6 @@ git commit -m "First commit"
 ```
 
 ![alt text](img/Exercises/exercise_6.svg)
-
 
 ## Exercise 7 - diagram
 
@@ -623,7 +605,6 @@ git commit -m
 ```
 
 ![alt text](img/Exercises/exercise_7.svg)
-
 
 ## Exercise 8 - diagram
 
@@ -642,7 +623,6 @@ git checkout -b readme
 ```
 
 ![alt text](img/Exercises/exercise_8.svg)
-
 
 ## Exercise 9 - diagram
 
@@ -666,7 +646,6 @@ for course to intro text"
 
 ![alt text](img/Exercises/exercise_9.svg)
 
-
 ## Exercise 10 - diagram
 
 Switch to `master` to `merge` into it
@@ -682,7 +661,6 @@ git merge readme
 Fast-forward `merge` as branches have not diverged.
 
 ![alt text](img/Exercises/exercise_10_ff_merge.svg)
-
 
 ## Exercise 10 - diagram (cont.)
 
