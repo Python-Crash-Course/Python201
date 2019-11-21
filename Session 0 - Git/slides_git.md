@@ -83,10 +83,10 @@ Version control system
 
 ## What is Git?
 
-* Most widely used version control technology in the world
-* Created by Linus Thorvalds (creator of Linux, Android ...)
-* Free and open-source
-* Works best for text files, but can be used for other file types
+- Most widely used version control technology in the world
+- Created by Linus Thorvalds (creator of Linux, Android ...)
+- Free and open-source
+- Works best for text files, but can be used for other file types
 
 ---
 
@@ -110,25 +110,25 @@ A common place to host *remote* Git repositories is **GitHub**.
 
 Most people hear about GitHub before Git, so let's cover that briefly:
 
-* **GitHub** is a website that hosts Git repositories
+- **GitHub** is a website that hosts Git repositories
 
-* Provides modern looking interface with many features for collaboration
+- Provides modern looking interface with many features for collaboration
 
-* **GitHub** started as a community maintained project and was so for many years
-* Acquired by Microsoft in 2018
+- **GitHub** started as a community maintained project and was so for many years
+- Acquired by Microsoft in 2018
 
 - Free for basic usage
 
-* Largest open-source platform in the world (incl. [Python](https://github.com/python))
+- Largest open-source platform in the world (incl. [Python](https://github.com/python))
 
 ---
 
 ## Some things GitHub makes easy
 
-* **Viewing version history** of projects tracked by Git
-* **Collaborating** on projects for both small and very large teams
-* **Showcasing** projects and demonstrating their use
-* **Managing** projects with to-do's, issues, milestones, releases etc.
+- **Viewing version history** of projects tracked by Git
+- **Collaborating** on projects for both small and very large teams
+- **Showcasing** projects and demonstrating their use
+- **Managing** projects with to-do's, issues, milestones, releases etc.
 
 To understand GitHub, one must first have a basic understanding of Git and version control in general.
 
@@ -141,18 +141,18 @@ Let's move on with that :rocket:
 
 - A **distributed version control system**
 
-* **Which means:**
+- **Which means:**
   Everyone has a local `clone` of the entire project and its history
 
 ---
 
 ## Advantages of Git
 
-* Fast and light-weight
-* Seamless collaborative work (no check-in/out locks)
-* Work alone when needed and share when needed
-* Almost impossible to lose work
-* Support workflows from very simple to very complex
+- Fast and light-weight
+- Seamless collaborative work (no check-in/out locks)
+- Work alone when needed and share when needed
+- Almost impossible to lose work
+- Support workflows from very simple to very complex
 
 ---
 <!-- _paginate: false -->
@@ -193,11 +193,11 @@ The `git commit` command is the heart of Git.
 
 - Saves your local staged changes to your local Git repository
 
-* Takes a "picture" of what the repository files look like and stores it as a ***snapshot***
+- Takes a "picture" of what the repository files look like and stores it as a ***snapshot***
 
-* Gives the snapshot an ID so all files can be reverted to that state at *any* time
+- Gives the snapshot an ID so all files can be reverted to that state at *any* time
 
-* Assigns the commit message you specify to snapshot
+- Assigns the commit message you specify to snapshot
 
 Make a `commit` each time you want to record a snapshot of the project state by:
 
@@ -222,9 +222,9 @@ Git uses pointers instead of duplicating unchanged files
 ![bg right:66% 90%](img/GitBasics/Status_of_files.png)
 A file in a Git repository can have two states:
 
-* **Untracked**
+- **Untracked**
 Grey operations
-* **Tracked**
+- **Tracked**
 Red operations
 
 ---
@@ -415,11 +415,11 @@ Merge conflicts can be resolved in the editor.
 
 ## Summary: Branching
 
-* Allows us to avoid working on the `master` branch
+- Allows us to avoid working on the `master` branch
 
 - Everybody can work without overwriting work of others
 
-* Work can be grouped logically into a branch for each sub project
+- Work can be grouped logically into a branch for each sub project
 
 - Use branches for work that's experimental in nature (and might end up discarded)
 
@@ -427,7 +427,7 @@ Merge conflicts can be resolved in the editor.
 
 - Creating a branch is cheap ---> it's encouraged to do it often
 
-* Main branch is by default called `master` :exclamation:
+- Main branch is by default called `master` :exclamation:
 
 ---
 
@@ -435,7 +435,7 @@ Merge conflicts can be resolved in the editor.
 
 - Allows us to feed work from branches back into the `master` (or other branches)
 
-* Frees us from *a lot* of manual and error prone work
+- Frees us from *a lot* of manual and error prone work
 
 - Provides a natural step for QA *(more on this when we get to GitHub)*
 
@@ -535,7 +535,7 @@ This creates a problem for merging, since the merging algorithm needs to compare
 
 ## Merging of binary files
 
-* Image with two different commits (non-conflicting) each on their own branch
+- Image with two different commits (non-conflicting) each on their own branch
 
 - Easy for humans to visually see how to merge
 
@@ -543,7 +543,7 @@ This creates a problem for merging, since the merging algorithm needs to compare
 
 - User must choose one or the other to keep and discard the other
 
-* Excel, word and PowerPoint files are also binary
+- Excel, word and PowerPoint files are also binary
 
 ![bg right:45% 90%](img/Non_text_files/wall_how_to_merge.jpg)
 
@@ -553,8 +553,8 @@ This creates a problem for merging, since the merging algorithm needs to compare
 
 Git can version control binary files, but it has some limitations.
 
-* Git cannot create meaningful **diffs** of binary files, which makes it hard to view changes from one commit to the next.
-* As a consequence, Git cannot automatically **merge** two diverged branches, i.e. two branches that were both committed to after they split. In that case it must be manually chosen which branch is the right one to continue with.
+- Git cannot create meaningful **diffs** of binary files, which makes it hard to view changes from one commit to the next.
+- As a consequence, Git cannot automatically **merge** two diverged branches, i.e. two branches that were both committed to after they split. In that case it must be manually chosen which branch is the right one to continue with.
 
 ---
 
