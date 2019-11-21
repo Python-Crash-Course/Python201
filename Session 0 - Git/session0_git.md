@@ -1,100 +1,20 @@
----
-marp: true
-# paginate: true
-_class: lead
-theme: base
-
-style: |
-  section {
-    font-family: Roboto;
-    background-color: #ccc;
-    color: darkslategrey;
-  }
-  h1 {
-    text-align: center;
-    font-family: Roboto;
-    color: #EE7631;
-    font-size: 50pt;
-    font-weight: bold;
-  }
-  h2 {
-    font-family: Roboto;
-    color: #EE7631;
-  }
-
-  p {
-    font-family: Roboto;
-  }
-
-   ul li ul li {
-     font-size: Roboto;
-     font-size: 20pt;
-  }
-
-  section.center-content p {
-    text-align: center;
-  }
-
-  section.small-table-text {
-    font-size: 16pt;
-  }
-
-  pre {
-    background-color: RGB(245, 245, 245);
-    box-shadow: 0 4px 8px grey;
-    line-height: 1.15;
-    margin: 15px auto 30px auto;
-    min-width: 60%;
-    padding: 0.4em 0.6em;
-  }
-
-  .scaling-svg-container {
-    position: relative;
-    height: 0;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-
-  .scaling-svg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-  }
-
-backgroundImage: "linear-gradient(to left, lightgrey, white)"
-
-
----
-<!-- footer: Python Crash Course 201 - Session 0 -->
-<!-- _class: center-content -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
 
 # Git
 
-![bg left:40% 80%](img/Logos/Git_Logo.png)
-Version control system
-
----
-<!-- _headingDivider: 1 -->
-<!-- paginate: true -->
+<img src="img/Logos/Git_Logo.png" alt="alt text" width="200">
 
 ## What is Git?
 
-* Most widely used version control technology in the world
-* Created by Linus Thorvalds (creator of Linux, Android ...)
-* Free and open-source
-* Works best for text files, but can be used for other file types
-
----
+- Most widely used version control technology in the world
+- Created by Linus Thorvalds (creator of Linux, Android ...)
+- Free and open-source
+- Works best for text files, but can be used for other file types
 
 ## Git repositories
 
-* A project is tracked as a ***Git repository***
-* Tracking occurs via a hidden subdirectory called `.git/` inside the root directory
-* A Git repository looks like any other directory on your system (except for the presence of `.git/`)
+- A project is tracked as a ***Git repository***
+- Tracking occurs via a hidden subdirectory called `.git/` inside the root directory
+- A Git repository looks like any other directory on your system (except for the presence of `.git/`)
 
 ### Common ways to create Git repositories
 
@@ -104,86 +24,68 @@ Version control system
 
 A common place to host *remote* Git repositories is **GitHub**.
 
----
-
 ## What is GitHub?
 
 Most people hear about GitHub before Git, so let's cover that briefly:
 
-* **GitHub** is a website that hosts Git repositories
+- **GitHub** is a website that hosts Git repositories
 
-* Provides modern looking interface with many features for collaboration
+- Provides modern looking interface with many features for collaboration
 
-* **GitHub** started as a community maintained project and was so for many years
-* Acquired by Microsoft in 2018
+- **GitHub** started as a community maintained project and was so for many years
+- Acquired by Microsoft in 2018
 
-* Free for basic usage
+- Free for basic usage
 
-* Largest open-source platform in the world (incl. [Python](https://github.com/python))
-
----
+- Largest open-source platform in the world (incl. [Python](https://github.com/python))
 
 ## Some things GitHub makes easy
 
-* **Viewing version history** of projects tracked by Git
-* **Collaborating** on projects for both small and very large teams
-* **Showcasing** projects and demonstrating their use
-* **Managing** projects with to-do's, issues, milestones, releases etc.
+- **Viewing version history** of projects tracked by Git
+- **Collaborating** on projects for both small and very large teams
+- **Showcasing** projects and demonstrating their use
+- **Managing** projects with to-do's, issues, milestones, releases etc.
 
 To understand GitHub, one must first have a basic understanding of Git and version control in general.
 
 Let's move on with that :rocket:
 
----
-![bg right 90%](img/GitBasics/Distr_version_control.png)
-
 ## So again, what is Git?
 
-* A **distributed version control system**
+- A **distributed version control system**
 
-* **Which means:**
+- **Which means:**
   Everyone has a local `clone` of the entire project and its history
 
----
+<img src="img/GitBasics/Distr_version_control.png" alt="alt text" width="400">
 
 ## Advantages of Git
 
-* Fast and light-weight
-* Seamless collaborative work (no check-in/out locks)
-* Work alone when needed and share when needed
-* Almost impossible to lose work
-* Support workflows from very simple to very complex
-
----
-<!-- _paginate: false -->
-<!-- _class: center-content  -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
-![bg right](img/Logos/Git_wallpaper.png)
+- Fast and light-weight
+- Seamless collaborative work (no check-in/out locks)
+- Work alone when needed and share when needed
+- Almost impossible to lose work
+- Support workflows from very simple to very complex
 
 # Git Basics
-
-Commands and features
-
----
-![bg right:25% 90%](img/GitBasics/Git_Bash.png)
 
 ## Git commands
 
 Interaction with Git is performed via commands in ***Git Bash***
 
-* Opens from inside your Git repository via right-click menu
-* Interact with the repository by typing `git <command_name>`
-* Many editors support common commands in GUI form
+- Opens from inside your Git repository via right-click menu
+- Interact with the repository by typing `git <command_name>`
+- Many editors support common commands in GUI form
 
 Initialize a Git repository inside a directory by typing
 
-```css
+![alt text](img/GitBasics/Git_Bash.png)
+
+```markdown
 git init
 ```
 
 This will create the hidden `.git` folder in the current directory.
-
----
 
 ## Commit
 
@@ -191,45 +93,38 @@ The `git commit` command is the heart of Git.
 
 **Git does the following when `git commit` is executed:**
 
-* Saves your local staged changes to your local Git repository
+- Saves your local staged changes to your local Git repository
 
-* Takes a "picture" of what the repository files look like and stores it as a ***snapshot***
+- Takes a "picture" of what the repository files look like and stores it as a ***snapshot***
 
-* Gives the snapshot an ID so all files can be reverted to that state at *any* time
+- Gives the snapshot an ID so all files can be reverted to that state at *any* time
 
-* Assigns the commit message you specify to snapshot
+- Assigns the commit message you specify to snapshot
 
 Make a `commit` each time you want to record a snapshot of the project state by:
 
-```css
+```markdown
 git commit -m "Commit message goes here"
 ```
-
----
-
-![bg right:55% 90%](img/GitBasics/Snapshots_over_time.png)
 
 ## Commits over time
 
 A `commit` records the state of all files, even unchanged ones.
 
-Git uses pointers instead of duplicating unchanged files
+Git uses pointers instead of duplicating unchanged files.
 
----
+![alt text](img/GitBasics/Snapshots_over_time.png)
 
 ## Status of files
 
-![bg right:66% 90%](img/GitBasics/Status_of_files.png)
 A file in a Git repository can have two states:
 
-* **Untracked**
+- **Untracked**
 Grey operations
-* **Tracked**
+- **Tracked**
 Red operations
 
----
-
-![bg right:40% 90%](img/GitBasics/Three_states.png)
+<img src="img/GitBasics/Status_of_files.png" alt="alt text" width="500">
 
 ## Three local states
 
@@ -244,8 +139,7 @@ File is in the staging area ready to be included in the next `commit`
 **3. Committed**
 The file has been checked in and Git has taken a snapshot of the repository state
 
----
-![bg right:40% 90%](img/GitBasics/gitignore_example.png)
+<img src="img/GitBasics/Three_states.png" alt="alt text" width="400">
 
 ## Ignoring files
 
@@ -253,25 +147,16 @@ It's quite common to have things inside a Git repository that you do not want to
 
 The `.gitignore` file inside the repository controls what is being version controlled.
 
-* Examples of files to ignore:
+- Examples of files to ignore:
 
-  * Excel files
-  * Pictures or graphs
-  * Dummy data sets for testing
-  * Generated files
+  - Excel files
+  - Pictures or graphs
+  - Dummy data sets for testing
+  - Generated files
 
----
-<!-- _paginate: false -->
-<!-- _class: center-content -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
-![bg right](img/Branching_and_Merging/Git_branching.PNG)
+<img src="img/GitBasics/gitignore_example.png" alt="alt text" width="300">
 
 # Branching
-
-The pinnacle of collaboration
-
----
-![bg right:30% 80%](img/Branching_and_Merging/Branching_step1.svg)
 
 ## Branching illustrated 1/4
 
@@ -286,8 +171,7 @@ The figure to the right depicts the scenario.
 
 > **Note:** `HEAD` is a reference to the currently checked out commit
 
----
-![bg right 85%](img/Branching_and_Merging/Branching_step2.svg)
+![alt text](img/Branching_and_Merging/Branching_step1.svg)
 
 ## Branching illustrated 2/4
 
@@ -297,13 +181,11 @@ We want to keep developing and create a new feature.
 
 3. So we create a new branch called `feature` from Git Bash by typing
 
-```css
+```markdown
 git branch feature
 ```
 
----
-
-![bg right 90%](img/Branching_and_Merging/Branching_step3.svg)
+![alt text](img/Branching_and_Merging/Branching_step2.svg)
 
 ## Branching illustrated 3/4
 
@@ -311,15 +193,13 @@ We have created the branch, but the currently checked out commit (`HEAD`) is sti
 
 4. We switch to the new `feature` branch by
 
-```css
+```markdown
 git checkout feature
 ```
 
 This switched us to the new `feature` branch with the same `commit` **C1**
 
----
-
-![bg right 90%](img/Branching_and_Merging/Branching_step4.svg)
+![alt text](img/Branching_and_Merging/Branching_step3.svg)
 
 ## Branching illustrated 4/4
 
@@ -327,7 +207,7 @@ Now we want to start making the changes to implement our feature.
 
 5. We make changes over two commits via
 
-```css
+```markdown
 git commit
 ```
 
@@ -335,17 +215,9 @@ This creates `commits` **C2** and **C3**.
 
 ***C2** and **C3** might have made `master` unstable had it been done on that branch. But we are safe to experiment on our `feature` branch.*
 
----
-<!-- _paginate: false -->
-<!-- _class: center-content -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
-![bg right](img/Branching_and_Merging/Git_branching.PNG)
+![alt text](img/Branching_and_Merging/Branching_step4.svg)
 
 # Merging
-
-Integrating changes from a branch
-
----
 
 ## Merging the `feature` branch
 
@@ -364,24 +236,20 @@ Both `feature` and `master` has new commits beyond **C1** which are not conflict
 3. **Merge conflict**
 Both `feature` and `master` has new commits beyond **C1** which are  conflicting
 
----
-![bg right:48% 75%](img/Branching_and_Merging/Merging_fastforward.svg)
-
 ## Auto merge: Fast-forward
 
 We can seamlessly merge branch `feature` into branch `master` by simply moving **C2** and **C3** to `master`.
 
 This is because `mater` is unchanged since branch `feature` was created. *The history is linear.*
 
-```css
+```markdown
 git checkout master
 git merge feature
 ```
 
 > **Note:** When doing `git merge <branch_name>`, `HEAD` must be in the branch to `merge` *into*.
 
----
-![bg right:48% 75%](img/Branching_and_Merging/Merging_3way.svg)
+![alt text](img/Branching_and_Merging/Merging_fastforward.svg)
 
 ## Auto merge: 3-way merge
 
@@ -389,13 +257,12 @@ Branch `master` now has a `commit` **C3** after `feature` was created. Thus, bot
 
 If **C2** and **C3** has ***no competing changes***, Git is smart enough to perform an automatic `merge` by use of those two commits and their common ancestor **C1** (3-way).
 
-```css
+```markdown
 git checkout master
 git merge feature
 ```
 
----
-![bg right:42% 95%](img/Branching_and_Merging/Merging_conflict.svg)
+![bg right:48% 75%](img/Branching_and_Merging/Merging_3way.svg)
 
 ## Merge conflict
 
@@ -411,75 +278,49 @@ Thus, **the user** must
 
 Merge conflicts can be resolved in the editor.
 
----
+![alt text](img/Branching_and_Merging/Merging_conflict.svg)
 
 ## Summary: Branching
 
-* Allows us to avoid working on the `master` branch
+- Allows us to avoid working on the `master` branch
 
-* Everybody can work without overwriting work of others
+- Everybody can work without overwriting work of others
 
-* Work can be grouped logically into a branch for each sub project
+- Work can be grouped logically into a branch for each sub project
 
-* Use branches for work that's experimental in nature (and might end up discarded)
+- Use branches for work that's experimental in nature (and might end up discarded)
 
-* A branch creates a pointer to a commit ID (*not* a copy of the file system)
+- A branch creates a pointer to a commit ID (*not* a copy of the file system)
 
-* Creating a branch is cheap ---> it's encouraged to do it often
+- Creating a branch is cheap ---> it's encouraged to do it often
 
-* Main branch is by default called `master` :exclamation:
-
----
+- Main branch is by default called `master` :exclamation:
 
 ## Summary: Merging
 
-* Allows us to feed work from branches back into the `master` (or other branches)
+- Allows us to feed work from branches back into the `master` (or other branches)
 
-* Frees us from *a lot* of manual and error prone work
+- Frees us from *a lot* of manual and error prone work
 
-* Provides a natural step for QA *(more on this when we get to GitHub)*
+- Provides a natural step for QA *(more on this when we get to GitHub)*
 
-* A successful `merge` creates a new *merge commit* at the tip of the current branch
+- A successful `merge` creates a new *merge commit* at the tip of the current branch
 
-* After merging, the branch that was merged in can be deleted
+- After merging, the branch that was merged in can be deleted
 
-* Basic merging can have three outcomes: 1. Fast-forward, 3-way merge or merge conflict
-
----
-<!-- _paginate: false -->
-<!-- _class: center-content -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
-![bg right](img/Workflow/Collaboration.jpg)
+- Basic merging can have three outcomes: 1. Fast-forward, 3-way merge or merge conflict
 
 # Workflow
 
-Some examples
-
----
-<!-- _class: center-content -->
-
 ## Simple workflow example
 
-![width:600pt](img/Workflow/Simple_workflow.svg)
-
----
-<!-- _class: center-content -->
+![alt text](img/Workflow/Simple_workflow.svg)
 
 ## Advanced workflow example (often referred to as Git Flow)
 
-![width:750pt](img/Workflow/GitFlow.png)
-
----
-<!-- _paginate: false -->
-<!-- _class: center-content -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
-![bg right](img/VScode/vscode_wallpaper.jpg)
+![alt text](img/Workflow/GitFlow.png)
 
 # Git in VS Code
-
-Simplifying common commands
-
----
 
 ## Git interface - _Git Bash vs. an editor_
 
@@ -489,95 +330,57 @@ However, **all the popular editors have Git integration build in**, which includ
 
 Visual Studio Code has great Git integration!
 
----
-
-![bg right:60% 90%](img/VScode/git_init_from_vscode.png)
-
 ## Start tracking your own project
 
 You want to create a new project and start tracking it with Git and GitHub.
-In order to do that, we need to have a
+We can initialize a repository as shown below.
 
 **Git Bash command:**
 
-```css
+```markdown
 git init
 ```
 
----
-<!-- _class: center-content -->
+From VS Code the same operation looks like this:
+
+![alt text](img/VScode/git_init_from_vscode.png)
 
 ## VS Code - Source control tab
 
 ![width:850pt](img/VSCode/source_control_tab.png)
 
----
-<!-- _paginate: false -->
-<!-- _class: center-content -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
-![bg right](img/Non_text_files/wall.jpg)
-
 # Git for non-text files
-
-Not optimal
-
----
 
 ## Binary files
 
-* Non-text files are so-called **binary files** in Git's eyes.
+- Non-text files are so-called **binary files** in Git's eyes.
 
-* They can not be meaningfully compared from commit to commit.
+- They can not be meaningfully compared from commit to commit.
 
 This creates a problem for merging, since the merging algorithm needs to compare the tip commit on the two branches to be merged with their common ancestor commit. When the difference between the commits can't be determined, merging always results in a conflict. **You need to retain one branch or the other**.
 
----
-
 ## Merging of binary files
 
-* Image with two different commits (non-conflicting) each on their own branch
+- Image with two different commits (non-conflicting) each on their own branch
 
-* Easy for humans to visually see how to merge
+- Easy for humans to visually see how to merge
 
-* File cannot be textually merged
+- File cannot be textually merged
 
-* User must choose one or the other to keep and discard the other
+- User must choose one or the other to keep and discard the other
 
-* Excel, word and PowerPoint files are also binary
+- Excel, word and PowerPoint files are also binary
 
-![bg right:45% 90%](img/Non_text_files/wall_how_to_merge.jpg)
-
----
+![alt text](img/Non_text_files/wall_how_to_merge.jpg)
 
 ## Summary
 
 Git can version control binary files, but it has some limitations.
 
-* Git cannot create meaningful **diffs** of binary files, which makes it hard to view changes from one commit to the next.
-* As a consequence, Git cannot automatically **merge** two diverged branches, i.e. two branches that were both committed to after they split. In that case it must be manually chosen which branch is the right one to continue with.
-
----
-
-## Side note: Why is this not a PowerPoint?
-
-This slide show is written in markdown via an extension for VS Code.
-
-Markdown is an easy language for writing text documents. Since it's a pure text file, it can be properly version controlled with Git.
-
-> Note: PowerPoints (`.ppt`-files) are binary
-
----
-<!-- _paginate: false -->
-<!-- _class: center-content -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
-![bg right](img/GitBasics/Basic_commands_img.jpg)
+- Git cannot create meaningful **diffs** of binary files, which makes it hard to view changes from one commit to the next.
+- As a consequence, Git cannot automatically **merge** two diverged branches, i.e. two branches that were both committed to after they split. In that case it must be manually chosen which branch is the right one to continue with.
 
 # Basic commands
-
-And references
-
----
-<!-- _class: small-table-text -->
 
 | Command                  | Description           |
 | :----------------------------------- |:-------------|
@@ -589,17 +392,9 @@ And references
 | ``git branch branch_name``  |  _Create a branch called `branch_name`_      |
 | ``git checkout branch_name``  |  _Checkout (or switch to) the branch called `branch_name`_      |
 | ``git checkout -b branch_name``  |  _Create and checkout (or switch to) the branch called `branch_name`_      |
-
----
-<!-- _class: small-table-text -->
-| Command                  | Description           |
-| :----------------------------------- |:-------------|
 | ``git branch``  |  _List all branches (shows an asterisk `*` at the currently checked out branch_    |
 | ``git merge branch_name``  |  _Merge the branch called `branch_name` into the currently checked out branch_      |
 | ``touch filename.ext``               | _Create a file `filename` with extension `ext` in current directory. Files can of course also be created by other methods or copied form elsewhere. Note: This is not actually a Git, but a Linux command_      |
-
----
-<!-- _class: small-table-text -->
 
 ## References
 
@@ -610,17 +405,7 @@ And references
 | [Pro Git](https://git-scm.com/book/en/v2) | _Book on Git written by experts_ |
 | [`.gitignore` examples](https://git-scm.com/book/en/v2) | _Good examples of `.gitignore` files for various languages_ |
 
----
-<!-- _paginate: false -->
-<!-- _class: center-content -->
-<!-- _backgroundImage: url('https://marp.app/assets/hero-background.jpg') -->
-![bg right](img/Exercises/Exercises.jpg)
-
 # Exercises
-
-Get started with Git for this course
-
----
 
 ## Purpose
 
@@ -628,9 +413,7 @@ The idea for the rest of the course is to integrate Git into all the subsequent 
 
 By the end of the course we should be pretty familiar with how Git works and feel comfortable using it going forward.
 
-If you haven't installed Git yet you can do so from [here](https://git-scm.com/download/win).
-
----
+If you haven't installed Git yet you can do so from [here](https://git-scm.com/downloads).
 
 ## Exercise 1 - One time configurations
 
@@ -638,17 +421,15 @@ Open Git Bash and check out your settings by `git config --list`.
 
 If needed, setup your global user name and email by typing the commands below.
 
-```css
+```markdown
 git config --global user.name "John Doe"
 ```
 
-```css
+```markdown
 git config --global user.email johndoe@cowi.com
 ```
 
 This user information will be tied to all `commit` actions that you do later on.
-
----
 
 ## Exercise 2
 
@@ -656,15 +437,13 @@ Create a new directory to store the contents you produce for this course. Inside
 
 **Initialize an empty Git repository** inside this directory by
 
-```css
+```markdown
 git init
 ```
 
-You can also do this from VS Code, as shown in the previous   slides, if you want.
+You can also do this from VS Code, as shown in the previously, if you want.
 
 *Recall that initializing a repository creates a hidden directory called `.git`, which will store all metadata about the project's version history.*
-
----
 
 ## Exercise 3
 
@@ -672,13 +451,11 @@ You probably want to store some files in the Git repository that you don't want 
 
 **Create a `.gitignore` file** by typing
 
-```css
+```markdown
 touch .gitignore
 ```
 
 Leave it empty for now.
-
----
 
 ## Exercise 4
 
@@ -688,9 +465,6 @@ Markdown is a way to create simple and good looking text documents. It's often u
 
 You can either create the file by the `touch` command or manually, e.g. via the editor.
 
----
-![bg right:37% 90%](img/Exercises/VScode_changes.png)
-
 ## Exercise 5
 
 Now you have created two files and modified them, and Git has spotted this.
@@ -699,22 +473,22 @@ Now you have created two files and modified them, and Git has spotted this.
 
 If you are using VS Code, check the Source Control tab on the left pane. The CHANGES tab will reveal all modified files that are not ignored via `.gitignore`.
 
-However, **the files are not yet under version control**. The green **U** denotes that the files are *untracked*. They need to be explicitly added to Git.
+![alt text](img/Exercises/VScode_changes.png)
 
----
+However, **the files are not yet under version control**. The green **U** denotes that the files are *untracked*. They need to be explicitly added to Git.
 
 ### Git Bash view
 
-![bg right:65% 90%](img/Exercises/git_status.png)
 If you are using Git Bash, you can get the same information by typing
 
-```css
+```markdown
 git status
 ```
 
 See the entire history of what we did so far in the image.
 
----
+![alt text](img/Exercises/git_status.png)
+
 
 **Stage the files `README.md` and `.gitignore`** to get them ready to go into the next `commit`.
 
@@ -727,11 +501,9 @@ git add README.md .gitignore
 
 You can also stage **all** files by
 
-```css
+```markdown
 git add .
 ```
-
----
 
 ## Exercise 6
 
@@ -745,17 +517,13 @@ git commit -m "First commit"
 
 Recall that a `commit` creates a **snapshot** of the state of the repository. It **locks** in the changes. This points can be reverted to or branched out from at any time.
 
----
-
 ## Exercise 7
 
-**Open the `.gitignore` file and put the files and folders you want Git to ignore inside it**. Use the example file from the slide about ignoring files as basis.
+**Open the `.gitignore` file and put the files and folders you want Git to ignore inside it**. Use the example file shown previously about ignoring files as basis.
 
 If you are using VS Code you should see the Source Control tab update to `.gitignore` to now be *modified* since last commit.
 
 When you are satisfied with the `.gitignore` file, `stage` the changes and `commit` the file with a fitting message.
-
----
 
 ## Exercise 8
 
@@ -776,8 +544,6 @@ git checkout readme
 > **Note 1:** These steps can be done in one go by `git checkout -b readme`
 > **Note 2:** You can also do this directly from VS Code from the bottom left corner
 
----
-
 ## Exercise 9
 
 In VS Code you can see that the current branch changed to `readme`. In Git Bash you can get the same info by running `git branch`.
@@ -791,8 +557,6 @@ See a guide for writing markdown [here](https://github.com/adam-p/markdown-here/
 
 Make as many commits as you desire. Keep commits in logical chunks and write concise and clear messages. Only committed changes are shared.
 
----
-
 ## Exercise 10
 
 You have now done a number of commits on the `readme` branch. Suppose you are done working with it for now. It's time to `merge` the changes into `master`.
@@ -801,23 +565,21 @@ Recall that merging has to be done from the branch that is to be merged *into*.
 
 **Checkout the `master` branch**
 
-```css
+```markdown
 git checkout master
 ```
 
 **And merge the `readme` branch into it**
 
-```css
+```markdown
 git merge readme
 ```
 
 > Question: What kind of merge operation will be applied in this scenario?
 
----
-
 ## Recap - Diagram of exercise flow
 
-The following slides try to depict the workflow of solving the above exercises.
+The following tries to depict the workflow of solving the above exercises.
 
 Commands are written for reference.
 
@@ -827,93 +589,87 @@ Commit messages are written next to each commit.
 
 The diagrams starts from Exercise 6, as that is where the first `commit` happens.
 
----
-![bg right 65%](img/Exercises/exercise_6.svg)
-
 ## Exercise 6 - diagram
 
-```css
+```markdown
 git commit -m "First commit"
 ```
 
----
-![bg right 70%](img/Exercises/exercise_7.svg)
+![alt text](img/Exercises/exercise_6.svg)
 
 ## Exercise 7 - diagram
 
-```css
+```markdown
 git commit -m
 "Add files to gitignore"
 ```
 
----
-![bg right 90%](img/Exercises/exercise_8.svg)
+![alt text](img/Exercises/exercise_7.svg)
 
 ## Exercise 8 - diagram
 
-```css
+```markdown
 git branch readme
 ```
 
-```css
+```markdown
 git checkout readme
 ```
 
 Alternatively in a single command
 
-```css
+```markdown
 git checkout -b readme
 ```
 
----
-![bg right:65% 90%](img/Exercises/exercise_9.svg)
+![alt text](img/Exercises/exercise_8.svg)
 
 ## Exercise 9 - diagram
 
-```css
+```markdown
 git commit -m
 "Add title and
 short description"
 ```
 
-```css
+```markdown
 git commit -m
 "Add description
 for Session 0"
 ```
 
-```css
+```markdown
 git commit -m
 "Add location and dates
 for course to intro text"
 ```
 
----
-![bg right:65% 90%](img/Exercises/exercise_10_ff_merge.svg)
+![alt text](img/Exercises/exercise_9.svg)
 
 ## Exercise 10 - diagram
 
 Switch to `master` to `merge` into it
 
-```css
+```markdown
 git checkout master
 ```
 
-```css
+```markdown
 git merge readme
 ```
 
 Fast-forward `merge` as branches have not diverged.
 
----
-![bg right:65% 100%](img/Exercises/exercise_10_no_ff_merge.svg)
+![alt text](img/Exercises/exercise_10_ff_merge.svg)
 
 ## Exercise 10 - diagram (cont.)
 
-Alternative without fast-forward
+Alternative `merge` without fast-forward
 
-```css
+```markdown
 git merge --no-ff readme
 ```
 
 Creates a new `merge commit` on `master`.
+
+![alt text](img/Exercises/exercise_10_no_ff_merge.svg)
