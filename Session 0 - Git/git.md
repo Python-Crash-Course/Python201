@@ -83,18 +83,18 @@ Version control system
 
 ## What is Git?
 
-* Most widely used version control technology in the world
-* Created by Linus Thorvalds
-* Free to use 
-* Works best for text files, but can be used for other file types
+- Most widely used version control technology in the world
+- Created by Linus Thorvalds
+- Free to use 
+- Works best for text files, but can be used for other file types
 
 ---
 
 ## Git repositories
 
-* A project is tracked as a ***Git repository***
-* Tracking occurs via a hidden subdirectory called `.git/` inside the root directory
-* A Git repository looks like any other directory on your system (except for the presence of `.git/`)
+- A project is tracked as a ***Git repository***
+- Tracking occurs via a hidden subdirectory called `.git/` inside the root directory
+- A Git repository looks like any other directory on your system (except for the presence of `.git/`)
 
 ### Common ways to create Git repositories
 1. Start tracking an existing *local* project by turning it into a Git repository 
@@ -108,23 +108,23 @@ A common place to host *remote* Git repositories is **GitHub**.
 ## What is GitHub? 
 Most people hear about GitHub before Git, so let's cover that briefly: 
 
-* **GitHub** is a website that hosts Git repositories 
+- **GitHub** is a website that hosts Git repositories 
 
-* Provides modern looking interface with many features for collaboration 
+- Provides modern looking interface with many features for collaboration 
 
-* **GitHub** started as a community maintained project and was so for many years 
-* Acquired by Microsoft in 2018. 
+- **GitHub** started as a community maintained project and was so for many years 
+- Acquired by Microsoft in 2018. 
 
-* Free for basic usage
+- Free for basic usage
 
 ---
 
 ## Some things GitHub makes easy
 
-* **Viewing version history** of projects tracked by Git 
-* **Collaborating** on projects for both small and very large teams
-* **Showcasing** projects and demonstrating their use 
-* **Managing** projects with todo's, issues, milestones, releases etc.
+- **Viewing version history** of projects tracked by Git 
+- **Collaborating** on projects for both small and very large teams
+- **Showcasing** projects and demonstrating their use 
+- **Managing** projects with todo's, issues, milestones, releases etc.
 
 To understand GitHub, one must first have a basic understanding of Git and version control in general.
 
@@ -135,19 +135,19 @@ Let's move on with that :rocket:
 
 ## So again, what is Git?
 
-* A **distributed version control system**
+- A **distributed version control system**
 
-* **Which means:** 
+- **Which means:** 
   Everyone has a local `clone ` of the entire project and its history 
 
 ---
 
 ## Advantages of Git 
-* Fast and light-weight
-* Seamless collaborative work
-* Work alone when needed and share when needed
-* Almost impossible to lose work
-* Supports workflows from very simple to very complex
+- Fast and light-weight
+- Seamless collaborative work
+- Work alone when needed and share when needed
+- Almost impossible to lose work
+- Supports workflows from very simple to very complex
 
 ---
 <!-- _paginate: false -->
@@ -166,9 +166,9 @@ Commands and features
 
 Interaction with Git is performed via commands in ***Git Bash***
 
-* Opens from inside your Git repository via right-click menu
-* Interact with the repository by typing `git <command_name>`
-* Many editors support common commands in GUI form
+- Opens from inside your Git repository via right-click menu
+- Interact with the repository by typing `git <command_name>`
+- Many editors support common commands in GUI form
 
 Initialize a Git repository inside a directory by typing
 
@@ -184,13 +184,13 @@ The `git commit` command is the heart of Git.
 
 **Git does the following when `git commit` is executed:**
 
-* Saves your local staged changes to your local Git repository
+- Saves your local staged changes to your local Git repository
 
-* Takes a "picture" of what the repository files look like and stores it as a ***snapshot*** 
+- Takes a "picture" of what the repository files look like and stores it as a ***snapshot*** 
 
-* Gives the snapsnot an ID so all files can be reverted to that state at *any* time
+- Gives the snapshot an ID so all files can be reverted to that state at *any* time
 
-* Assigns the commit message you specify to snapshot 
+- Assigns the commit message you specify to snapshot 
 
 Make a `commit` each time you want to record a snapshot of the project state by: 
 
@@ -213,9 +213,9 @@ Git creates a pointer to the previous version of unchanged files instead of savi
 ![bg right:66% 90%](img/GitBasics/Status_of_files.png)
 A file in a Git repository can have two states: 
 
-* **Untracked** 
+- **Untracked** 
 Grey operations
-* **Tracked** 
+- **Tracked** 
 Red operations
 
 ---
@@ -243,12 +243,12 @@ It's quite common to have things inside a Git repository that you do not want to
 
 The `.gitignore` file inside the repository controls what is being version controlled.
 
-* Examples of files to ignore:
+- Examples of files to ignore:
 
-  * Excel files
-  * Pictures or graphs
-  * Dummy data sets for testing
-  * Generated files
+  - Excel files
+  - Pictures or graphs
+  - Dummy data sets for testing
+  - Generated files
 
 ---
 <!-- _paginate: false -->
@@ -396,35 +396,35 @@ Merge conflicts can be resolved in the editor.
 
 ## Summary: Branching
 
-* Allows us to avoid working on the `master` branch  
+- Allows us to avoid working on the `master` branch  
 
-* Everybody can work without overwriting work of others
+- Everybody can work without overwriting work of others
 
-* Work can be grouped logically into a branch for each sub project 
+- Work can be grouped logically into a branch for each sub project 
 
-* Use branches for work that's experimental in nature (and might end up discarded)
+- Use branches for work that's experimental in nature (and might end up discarded)
 
-* A branch creates a pointer to a commit ID (*not* a copy of the file system)
+- A branch creates a pointer to a commit ID (*not* a copy of the file system)
 
-* Creating a branch is cheap ---> it's encouraged to do it often
+- Creating a branch is cheap ---> it's encouraged to do it often
 
-* Main branch is by default called `master` :exclamation:
+- Main branch is by default called `master` :exclamation:
  
 ---
 
 ## Summary: Merging
 
-* Allows us to feed work from branches back into the `master` (or other branches)
+- Allows us to feed work from branches back into the `master` (or other branches)
 
-* Frees us from *a lot* of manual and error prone work 
+- Frees us from *a lot* of manual and error prone work 
 
-* Provides a natural step for QA *(more on this when we get to GitHub)*
+- Provides a natural step for QA *(more on this when we get to GitHub)*
 
-* A successful `merge` creates a new *merge commit* at the tip of the current branch
+- A successful `merge` creates a new *merge commit* at the tip of the current branch
 
-* After merging, the branch that was merged in can be deleted
+- After merging, the branch that was merged in can be deleted
 
-* Basic merging can have three outcomes: 1. Fast-forward, 3-way merge or merge conflict
+- Basic merging can have three outcomes: 1. Fast-forward, 3-way merge or merge conflict
 
 
 ---
@@ -498,24 +498,24 @@ Not optimal
 
 ## Binary files
 
-* Non-text files are so-called **binary files** in Git's eyes.
+- Non-text files are so-called **binary files** in Git's eyes.
 
-* They can not be meaningfully compared from commit to commit.
+- They can not be meaningfully compared from commit to commit.
 
 This creates a problem for merging, since the merging algorithm needs to compare the tip commit on the two branches to be merged with their common ancestor commit. When the difference between the commits can't be determined, merging always results in a conflict. **You need to retain one branch or the other**. 
 
 ---
 
 ## Merging of binary files
-* Image with two different commits (non-conflicting) each on their own branch
+- Image with two different commits (non-conflicting) each on their own branch
 
-* Easy for humans to visually see how to merge
+- Easy for humans to visually see how to merge
 
-* File cannot be textually merged
+- File cannot be textually merged
 
-* User must choose one or the other to keep and discard the other
+- User must choose one or the other to keep and discard the other
 
-* Excel, word and PowerPoint files are also binary  
+- Excel, word and PowerPoint files are also binary  
 
 ![bg right:45% 90%](img/Non_text_files/wall_how_to_merge.jpg)
 
@@ -525,8 +525,8 @@ This creates a problem for merging, since the merging algorithm needs to compare
 ## Summary
 
 Git can version control binary files, but it has some limitations.
-* Git cannot create meaningful **diffs** of binary files, which makes it hard to view changes from one commit to the next.  
-* As a consequence, Git cannot automatically **merge** two diverged branches, i.e. two branches that were both committed to after they split. In that case it must be manually chosen which branch is the right one to continue with. 
+- Git cannot create meaningful **diffs** of binary files, which makes it hard to view changes from one commit to the next.  
+- As a consequence, Git cannot automatically **merge** two diverged branches, i.e. two branches that were both committed to after they split. In that case it must be manually chosen which branch is the right one to continue with. 
 
 ---
 
@@ -598,7 +598,7 @@ The idea for the rest of the course is to integrate Git into all the subsequent 
 
 By the end of the course we should be pretty familiar with how Git works and feel comfortable using it going forward.
 
-If you haven't installed Git yet you can do so from [here](https://git-scm.com/download/win).
+If you haven't installed Git yet you can do so from [here](https://git-scm.com/downloads).
 
 ---
 
