@@ -1,8 +1,10 @@
 # Python201 - Intermediate Python Programming
-Course material on its way...
+
+![python.org logo](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
+
+This GitHub repository contains material for an intermediate Python course held in COWI Lyngby during 2019/2020.
 
 # Sessions Notes and Exercises
-*The proposed structure of the sesssion is as shown below.*
 
 * Session 0 - Git 
 * Session 1 - GitHub 
@@ -14,3 +16,16 @@ Course material on its way...
 * Session 7 - PDF manipulations with `PyMuPDF` 
 * Session 8 - Interfacing with Excel via `xlwings` 
 * Session 9 - Where to go from here (inspiration) 
+
+# Exercise Solutions
+
+* Session 0
+* Session 1
+* Session 2 
+* Session 3
+* Session 4
+* Session 5
+* Session 6
+* Session 7
+* Session 8
+* Session 9
