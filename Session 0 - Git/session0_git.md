@@ -57,7 +57,7 @@ Let's move on with that :rocket:
 - **Which means:**
   Everyone has a local `clone` of the entire project and its history
 
-<img src="https://github.com/Python-Crash-Course/Python201/tree/master/Session%200%20-%20Git/img/GitBasics" alt="alt text" width="400">
+<img src="https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/GitBasics/Distr_version_control.PNG" alt="alt text" width="400">
 
 ## Advantages of Git
 
@@ -347,7 +347,7 @@ From VS Code the same operation looks like this:
 
 ## VS Code - Source control tab
 
-![width:850pt](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/VScode/source_control_tab.pdf)
+![width:850pt](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/VScode/source_control_tab.PNG)
 
 # Git for non-text files
 
