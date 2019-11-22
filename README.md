@@ -6,7 +6,7 @@ This GitHub repository contains material for an intermediate Python course held 
 
 ## Sessions Notes and Exercises
 
-* [Session 0 - Git](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md)
+* [Session 0 - Git](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md#git)
 * Session 1 - GitHub
 * Session 2 - Plotting and Vizualization
 * Session 3 - Data manipulation with Pandas
