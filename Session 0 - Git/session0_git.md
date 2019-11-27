@@ -515,6 +515,8 @@ Now the new files are in the staging area ready to be committed.
 git commit -m "First commit"
 ```
 
+In VS Code, this is done by writing the message in the box at the top left of the Source Control tab and pressing the check mark sign to `commit` it.
+
 Recall that a `commit` creates a **snapshot** of the state of the repository. It **locks** in the changes. This points can be reverted to or branched out from at any time.
 
 ## Exercise 7
@@ -542,7 +544,7 @@ git checkout readme
 ```
 
 > **Note 1:** These steps can be done in one go by `git checkout -b readme`
-> **Note 2:** You can also do this directly from VS Code from the bottom left corner
+> **Note 2:** You can also do this directly from VS Code from the bottom left corner where the current branch is shown
 
 ## Exercise 9
 
@@ -555,7 +557,7 @@ See a guide for writing markdown [here](https://github.com/adam-p/markdown-here/
 
 **When you reach a state you want to record, `stage` the changes and `commit` with a message.**
 
-Make as many commits as you desire. Keep commits in logical chunks and write concise and clear messages. Only committed changes are shared.
+Make as many commits as you desire. Keep commits in logical chunks and write concise and clear messages.
 
 ## Exercise 10
 
@@ -576,6 +578,8 @@ git merge readme
 ```
 
 > Question: What kind of merge operation will be applied in this scenario?
+
+Check how `README.md` looks in `master` now. The changes you did in the `readme` branch should now be part of `master`.
 
 ## Recap - Diagram of exercise flow
 
