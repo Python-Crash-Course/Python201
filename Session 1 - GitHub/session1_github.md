@@ -1,12 +1,12 @@
 # GitHub
 
-<***Image here***>
+<***Placeholder for GitHub image***>
 
 ## Recap form Session 1
 
 GitHub is a website that hosts Git repositories.
 
-<***Recap here...***>
+<***Placeholder for recap***>
 
 ## Remotes - sharing work
 
@@ -16,7 +16,19 @@ Up until now we have only talked about local operations. I.e. operations where e
 
 ### Pull Request
 
+<***Placeholder for description***>
+
+### Issues
+
+<***Placeholder for description***>
+
 ### ```push```
+
+<***Placeholder for description***>
+
+```markdown
+git push
+```
 
 ### `clone`
 
@@ -60,21 +72,9 @@ This implies that if you checkout `origin/master`, or any other remote branch fo
 
 Other branches in the remote repository will have the name `origin/branch_name`
 
-## Common Git operations with remote
-
-```markdown
-git push -u origin master
-```
-
 ## Visualizing a two-person workflow
 
 <***Insert diagram with two different machines and a remote repo. Each machine should periodically push and pull from master to share and retrieve updated work.***>
-
-## GitHub features
-
-### Pull requests
-
-### Issues
 
 ## Exercises
 
@@ -111,20 +111,50 @@ You should now see a clean repository that looks something like this
 
 ![alt text](img/clean_repo.png)
 
-We will now `push` our local code this remote repository.
+You will now `push` your local code this remote repository.
 
 1. Click the green *Clone or download* button and copy the url.
 
-2. `git remote add origin <url>`
-***How about from vscode?***
+2. Run `git remote add origin <url>`
 
-3. `git`
-***What is the state of their repos? do they have branches to push or just master?***
+   In VS Code, press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> and type "*Remote*". Choose *Add remote* and supply the url to your remote GitHub repository.
 
-***When pushing, it will say that the remote contains work that you do not have locally => git pull and then git push***.
+3. Run `git push -u origin master`
 
-***Do this exercise yourself before to make sure what they go through***
+   This pushes you local changes to the remote `master` branch on GitHub and creates a link between your local `master` and the `master` on GitHub.
+   Thus, subsequent pushes can be done as just `git push` as Git will now know which remote branch to update.
+   If you run `git push` without having the link set up beforehand, Git will say something like "*The current branch has no upstream branch*" and ask you to create it before (or while) pushing.
+
+If this succeeded you should now see the GitHub updated repository.
+
+***
+
+**Note:** If you created the GitHub repository with a license file `git push - origin master` will fail and say *Updates were rejected because the tip of your current branch is behind it's remote counterpart*. In other words, the GitHub repository has work that you don't have locally. In this case the license file.
+
+Then it asks you to `pull` down the changes from GitHub to get them merged into your local work. When  that's done, you can `push`. The reason that this is happening is that a `push` can only happen automatically if the `merge` into the remote is of type *fast-forward*. By creating the license file on GitHub the remote `master` and the local `master` have diverged.
+
+To solve this, `pull` the changes down like this:
+
+```markdown
+git pull origin master --allow-unrelated-histories
+```
+
+Git will open your editor and ask you to do the `merge commit` with a message.
+
+The `git push` can now do a *fast-forward* merge with the GitHub remote because the local work contains all the work that is on GitHub plus som additional work.
+
+Afterwards, you should be able to run `git push -u origin master` and see your updated GitHub repository.
+
+The `--allow-unrelated-histories` flag will not be necessary for pulling next time, since the histories of the local and remote are now *related*.
+
+***Your remote repository on GitHub is now ready for you to continuously `push` work during the next remaining sessions of the course.***
 
 ## Exercise 4
 
 ***GitHub Learning Lab***
+
+The best way get familiar with GitHub is to use it directly. They have a Learning Lab with some nice interactive tutorials.
+
+A good place to start is at [First Day on GitHub](https://lab.github.com/githubtraining/paths/first-day-on-github).
+
+Be sure to watch the video in *What is GitHub* and to take the interactive tutorial called *Introduction to GitHub*, which will guide you through many of the core features.
