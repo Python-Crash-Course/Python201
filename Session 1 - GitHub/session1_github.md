@@ -4,14 +4,14 @@ Last time we talked about the general idea behind Git and how we work on local r
 
 We learned how to initiate a new local repository using the `git init` command, how to see the change status with `git status`, how to stage changes with `git add` and finally commit them with the `git commit -m "<message>"` command. The last two commands can even be merged into one `git commit -am "<message>"`.
 
-We can see the commit history with `git log --oneline` and move the HEAD to previous commits with  `git checkout <sha>` (or other branches with `git checkout <branch>`).
+We can see the commit history with `git log --oneline <branch>` and move the HEAD to previous commits with  `git checkout <sha>` (or other branches with `git checkout <branch>`).
 
 We can create a new branch from HEAD with `git branch <new-branch-name>` and then move HEAD to the new branch with `git checkout <branch>` or combine these two commands with `git checkout -b <new-branch-name>`.
 The `git branch` command can also be used to see an overview of the current branches with HEAD'ed branch shown with a **"\*"**.
 
 Finally we talked about how we can merge a given branch into HEAD with `git merge <branch>` and then delete the branch with `git branch -d <branch>`
 
-# GitHub
+# Remote Repositories
 
 <!-- GitHub  and Octocat image -->
 <p float="middle">
@@ -22,34 +22,47 @@ Finally we talked about how we can merge a given branch into HEAD with `git merg
 GitHub is a website that host Git repositories.
 It was founded in 2008 and was in 2018 acquired by Microsoft. It now have more than 40 million people working on over 100 million projects!
 
-## Remote Repositories
-
 Up until now we have only talked about local repositories. I.e. operations where each person works against a locally accessible repository. Note that a local repository can be used by several people if stored on a shared network drive, Dropbox/OneDrive folder etc.
 
 Now we will talk about how to use remote repositories for collaboration and/or sharing work.
 
 We use a remote GitHub repository as the example here but it's not different working against a remote repository on a private on-premise Git server used by many companies.
 
-### `Remote add` or `Clone`:
+## Remote add or Clone
 
 There's two ways to get started:
 
 - If you already got a local Git repository you can connect it to a remote repository using `git remote add origin <url_to_remote_repo>`, where "origin" is the default name convention used to represent the remote repository the repository originate from.
 - Alternatively, you can create a local repository by cloning a remote repository with `git clone <url_to_remote_repo>`.
 
-### `Push and Pull Requests`:
+## origin
 
-Once a remote connection is established the `git pull` command can be used to pull all the latest commits from the origin.
+**The *main* remote repository is called `origin`.**
 
-On the other hand, if commits have been made to the local repository they can be pushed to the origin with `git push origin master`, where "master" is the branch to want to push your changes to.
+When you connect your local repository to a remote one, it's standard to name the remote one `origin`. If you `clone` a project from an url, Git will automatically set the name of the remote repository to `origin`.
 
-## GitHub features
+`origin` is the default name for a main remote repository just as `master` is the default name for the main branch.
+It's possible (but not common) to rename the main remote to something else, just like `master` can be renamed.
 
-### Issues:
+You can have more than one remote repository. An example of this could be when *forking* a project. You will have your own fork as the *main* remote repository, i.e. `origin`. The existing project that you forked from could be called `upstream`.
 
-<***Placeholder for description***>
+## Push and Pull Requests
 
-### Forking:
+Once a remote connection is established the `git pull origin <branch>` command can be used to pull all the latest commits from "branch" on origin into HEAD. I.e. cloning a remote branch into HEAD.
+
+On the other hand, if commits have been made to the local repository they can be pushed to the origin with `git push origin <branch>`, where "branch" is the remote branch you want to push HEAD into. This is similar to cloning HEAD into a remote branch.
+
+## origin/master
+
+**The local branch `origin/master` is a cached version of the remote branch `master`.**
+
+You have an `origin/master` on your local machine. This is a ***read-only*** branch that You can't commit to. It's a so-called *bare repository*, which has no working tree (editable files). The `get fetch origin <branch>` command can be used to update this cached version of the remote
+
+This implies that if you checkout `origin/master`, or any other remote branch for that matter, you will be in ***detached head*** state. *Detached head* means that what's currently checked out is not a local branch.
+
+Other branches in the remote repository will have the name `origin/branch_name`
+
+## Forking
 
 **Imagine this scenario:** You see a cool project on GitHub that you are interested in. You would like to access the code to play around with it yourself, maybe you want to use it as basis for your own project. ***But***, you don't want to affect the existing project.
 
@@ -62,26 +75,11 @@ This is a common way to contribute to projects where you are not part of the "co
 
 *See more about forking [here](https://help.github.com/en/github/getting-started-with-github/fork-a-repo).*
 
-### `origin`
+## Issues
 
-**The *main* remote repository is called `origin`.**
+<***Placeholder for description***>
 
-When you connect your local repository to a remote one, it's standard to name the remote one `origin`. If you `clone` a project from an url, Git will automatically set the name of the remote repository to `origin`.
 
-`origin` is the default name for a main remote repository just as `master` is the default name for the main branch.
-It's possible (but not common) to rename the main remote to something else, just like `master` can be renamed.
-
-You can have more than one remote repository. An example of this could be when *forking* a project. You will have your own fork as the *main* remote repository, i.e. `origin`. The existing project that you forked from could be called `upstream`.
-
-### `origin/master`
-
-**The `master` branch in the remote repository is called `origin/master`.**
-
-You have an `origin/master` on your local machine. This a branch that is ***read-only***. You can't write directly to a remote repository. It's a so-called *bare repository*, which has no working tree (editable files). Changes have to be done locally and `pushed` to the remote.
-
-This implies that if you checkout `origin/master`, or any other remote branch for that matter, you will be in ***detached head*** state. *Detached head* means that what's currently checked out is not a local branch.
-
-Other branches in the remote repository will have the name `origin/branch_name`
 
 ## Visualizing a two-person workflow
 
