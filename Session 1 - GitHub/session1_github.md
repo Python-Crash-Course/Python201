@@ -1,44 +1,55 @@
+## Git Recap
+
+Last time we talked about the general idea behind Git and how we work on local repositories.
+
+We learned how to initiate a new local repository using the `git init` command, how to see the change status with `git status`, how to stage changes with `git add` and finally commit them with the `git commit -m "<message>"` command. The last two commands can even be merged into one `git commit -am "<message>"`.
+
+We can see the commit history with `git log --oneline` and move the HEAD to previous commits with  `git checkout <sha>` (or other branches with `git checkout <branch>`).
+
+We can create a new branch from HEAD with `git branch <new-branch-name>` and then move HEAD to the new branch with `git checkout <branch>` or combine these two commands with `git checkout -b <new-branch-name>`.
+The `git branch` command can also be used to see an overview of the current branches with HEAD'ed branch shown with a **"\*"**.
+
+Finally we talked about how we can merge a given branch into HEAD with `git merge <branch>` and then delete the branch with `git branch -d <branch>`
+
 # GitHub
 
-<***Placeholder for GitHub image***>
+<!-- GitHub  and Octocat image -->
+<p float="middle">
+  <img src="img/Octocat.png" width="300"/>
+  <img src="img/GitHub_Logo.png" width="300"/>
+</p>
 
-## Recap form Session 1
+GitHub is a website that host Git repositories.
+It was founded in 2008 and was in 2018 acquired by Microsoft. It now have more than 40 million people working on over 100 million projects!
 
-GitHub is a website that hosts Git repositories.
+## Remote Repositories
 
-<***Placeholder for recap***>
+Up until now we have only talked about local repositories. I.e. operations where each person works against a locally accessible repository. Note that a local repository can be used by several people if stored on a shared network drive, Dropbox/OneDrive folder etc.
 
-## Remotes - sharing work
+Now we will talk about how to use remote repositories for collaboration and/or sharing work.
 
-Up until now we have only talked about local operations. I.e. operations where each person works alone on a local machine.
+We use a remote GitHub repository as the example here but it's not different working against a remote repository on a private on-premise Git server used by many companies.
 
-## GitHub features and remote nomenclature
+### `Remote add` or `Clone`:
 
-### Pull Request
+There's two ways to get started:
+
+- If you already got a local Git repository you can connect it to a remote repository using `git remote add origin <url_to_remote_repo>`, where "origin" is the default name convention used to represent the remote repository the repository originate from.
+- Alternatively, you can create a local repository by cloning a remote repository with `git clone <url_to_remote_repo>`.
+
+### `Push and Pull Requests`:
+
+Once a remote connection is established the `git pull` command can be used to pull all the latest commits from the origin.
+
+On the other hand, if commits have been made to the local repository they can be pushed to the origin with `git push origin master`, where "master" is the branch to want to push your changes to.
+
+## GitHub features
+
+### Issues:
 
 <***Placeholder for description***>
 
-### Issues
-
-<***Placeholder for description***>
-
-### ```push```
-
-<***Placeholder for description***>
-
-```markdown
-git push
-```
-
-### `clone`
-
-With Git, you can `clone` a remote repository to your local machine and start version controlling it by
-
-```markdown
-git clone <url_to_remote_repo>
-```
-
-### Forking
+### Forking:
 
 **Imagine this scenario:** You see a cool project on GitHub that you are interested in. You would like to access the code to play around with it yourself, maybe you want to use it as basis for your own project. ***But***, you don't want to affect the existing project.
 
@@ -68,7 +79,7 @@ You can have more than one remote repository. An example of this could be when *
 
 You have an `origin/master` on your local machine. This a branch that is ***read-only***. You can't write directly to a remote repository. It's a so-called *bare repository*, which has no working tree (editable files). Changes have to be done locally and `pushed` to the remote.
 
-This implies that if you checkout `origin/master`, or any other remote branch for that matter, you will be in ***detached head*** state. *Detached head* means that what's currently checked out is not a local branch.  
+This implies that if you checkout `origin/master`, or any other remote branch for that matter, you will be in ***detached head*** state. *Detached head* means that what's currently checked out is not a local branch.
 
 Other branches in the remote repository will have the name `origin/branch_name`
 
@@ -150,14 +161,14 @@ Recall that when merging, the currently checked out branch is the one that is me
 
 ## Exercises
 
-Before starting these exercises, you should have a ***local Git repository*** created for version controlling the contents this we develop for this course.
+Before starting these exercises, you should have a ***local Git repository*** created for version controlling the contents we develop for this course.
 If you don't have that yet, please do the [Session 1 exercises](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md#exercises) before starting these.
 
 ## Exercise 1
 
 ***Create a GitHub account***
 
-Go to [github.com](https://github.com/) and create an account if you don't already have one and log in.
+Go to [github.com](https://github.com/) and create an account if you don't already have one. Afterwards log in.
 
 ## Exercise 2
 
@@ -173,7 +184,7 @@ Go to [github.com](https://github.com/) and create an account if you don't alrea
 
 5. Click *Create repository*.
 
-> There is an info icon if you are more curious which license to choose for your repository. If you want to add one but don't care which, just take MIT License. It's the most permissive one.
+> Next to the license box there is an info icon if you are more curious which license to choose for your repository. If you want to add one but don't care which, just take MIT License. It's the most permissive one.
 
 ## Exercise 3
 
@@ -189,7 +200,7 @@ You will now `push` your local code this remote repository.
 
 2. Run `git remote add origin <url>`
 
-   In VS Code, press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> and type "*Remote*". Choose *Add remote* and supply the url to your remote GitHub repository.
+   If you do it from VS Code, press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> and type "*Remote*". Choose *Add remote* and supply the url to your remote GitHub repository.
 
 3. Run `git push -u origin master`
 
@@ -201,9 +212,9 @@ If this succeeded you should now see the GitHub updated repository.
 
 ***
 
-**Note:** If you created the GitHub repository with a license file `git push - origin master` will fail and say *Updates were rejected because the tip of your current branch is behind it's remote counterpart*. In other words, the GitHub repository has work that you don't have locally. In this case the license file.
+**Note:** If you created the GitHub repository with a license file `git push -u origin master` will fail and say *Updates were rejected because the tip of your current branch is behind it's remote counterpart*. In other words, the GitHub repository has work that you don't have locally. In this case the license file.
 
-Then it asks you to `pull` down the changes from GitHub to get them merged into your local work. When  that's done, you can `push`. The reason that this is happening is that a `push` can only happen automatically if the `merge` into the remote is of type *fast-forward*. By creating the license file on GitHub the remote `master` and the local `master` have diverged.
+Then it asks you to `pull` down the changes from GitHub to get them merged into your local work. When that's done, you can `push`. The reason this is happening is that a `push` can only happen automatically if the `merge` into the remote is of type *fast-forward*. By creating the license file on GitHub the remote `master` and the local `master` have diverged.
 
 To solve this, `pull` the changes down like this:
 
