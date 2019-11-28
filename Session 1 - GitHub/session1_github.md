@@ -20,39 +20,36 @@ Finally we talked about how we can merge a given branch into HEAD with `git merg
 </p>
 
 GitHub is a website that host Git repositories.
-It was founded in 2008 and acquired by Microsoft in 2018. Now more than 40 million people uses it for over 100 million projects!
+It was founded in 2008 and was in 2018 acquired by Microsoft. It now have more than 40 million people working on over 100 million projects!
 
-## Remotes - sharing work
+## Remote Repositories
 
-Up until now we have only talked about local operations. I.e. operations where each person works alone on a local machine.
+Up until now we have only talked about local repositories. I.e. operations where each person works against a locally accessible repository. Note that a local repository can be used by several people if stored on a shared network drive, Dropbox/OneDrive folder etc.
 
-## GitHub features and remote nomenclature
+Now we will talk about how to use remote repositories for collaboration and/or sharing work.
 
-### `Pull Request`
+We use a remote GitHub repository as the example here but it's not different working against a remote repository on a private on-premise Git server used by many companies.
+
+### `Remote add` or `Clone`:
+
+There's two ways to get started:
+
+- If you already got a local Git repository you can connect it to a remote repository using `git remote add origin <url_to_remote_repo>`, where "origin" is the default name convention used to represent the remote repository the repository originate from.
+- Alternatively, you can create a local repository by cloning a remote repository with `git clone <url_to_remote_repo>`.
+
+### `Push and Pull Requests`:
+
+Once a remote connection is established the `git pull` command can be used to pull all the latest commits from the origin.
+
+On the other hand, if commits have been made to the local repository they can be pushed to the origin with `git push origin master`, where "master" is the branch to want to push your changes to.
+
+## GitHub features
+
+### Issues:
 
 <***Placeholder for description***>
 
-### `Issues`
-
-<***Placeholder for description***>
-
-### ```Push Request```
-
-<***Placeholder for description***>
-
-```markdown
-git push
-```
-
-### `clone`
-
-With Git, you can `clone` a remote repository to your local machine and start version controlling it by
-
-```markdown
-git clone <url_to_remote_repo>
-```
-
-### Forking
+### Forking:
 
 **Imagine this scenario:** You see a cool project on GitHub that you are interested in. You would like to access the code to play around with it yourself, maybe you want to use it as basis for your own project. ***But***, you don't want to affect the existing project.
 
