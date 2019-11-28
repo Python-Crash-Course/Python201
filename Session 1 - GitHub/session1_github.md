@@ -1,10 +1,15 @@
 # GitHub
 
-<***Placeholder for GitHub image***>
+<!-- GitHub  and Octocat image -->
+<p float="middle">
+  <img src="img/Octocat.png" width="300"/>
+  <img src="img/GitHub_Logo.png" width="300"/>
+</p>
 
 ## Recap form Session 1
 
-GitHub is a website that hosts Git repositories.
+GitHub is a website that host Git repositories.
+It was founded in 2008 and acquired by Microsoft in 2018. Now more than 40 million people uses it for over 100 million projects!
 
 <***Placeholder for recap***>
 
@@ -68,7 +73,7 @@ You can have more than one remote repository. An example of this could be when *
 
 You have an `origin/master` on your local machine. This a branch that is ***read-only***. You can't write directly to a remote repository. It's a so-called *bare repository*, which has no working tree (editable files). Changes have to be done locally and `pushed` to the remote.
 
-This implies that if you checkout `origin/master`, or any other remote branch for that matter, you will be in ***detached head*** state. *Detached head* means that what's currently checked out is not a local branch.  
+This implies that if you checkout `origin/master`, or any other remote branch for that matter, you will be in ***detached head*** state. *Detached head* means that what's currently checked out is not a local branch.
 
 Other branches in the remote repository will have the name `origin/branch_name`
 
