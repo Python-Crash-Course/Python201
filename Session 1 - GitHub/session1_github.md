@@ -78,14 +78,14 @@ Other branches in the remote repository will have the name `origin/branch_name`
 
 ## Exercises
 
-Before starting these exercises, you should have a ***local Git repository*** created for version controlling the contents this we develop for this course.
+Before starting these exercises, you should have a ***local Git repository*** created for version controlling the contents we develop for this course.
 If you don't have that yet, please do the [Session 1 exercises](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md#exercises) before starting these.
 
 ## Exercise 1
 
 ***Create a GitHub account***
 
-Go to [github.com](https://github.com/) and create an account if you don't already have one and log in.
+Go to [github.com](https://github.com/) and create an account if you don't already have one. Afterwards log in.
 
 ## Exercise 2
 
@@ -101,7 +101,7 @@ Go to [github.com](https://github.com/) and create an account if you don't alrea
 
 5. Click *Create repository*.
 
-> There is an info icon if you are more curious which license to choose for your repository. If you want to add one but don't care which, just take MIT License. It's the most permissive one.
+> Next to the license box there is an info icon if you are more curious which license to choose for your repository. If you want to add one but don't care which, just take MIT License. It's the most permissive one.
 
 ## Exercise 3
 
@@ -117,7 +117,7 @@ You will now `push` your local code this remote repository.
 
 2. Run `git remote add origin <url>`
 
-   In VS Code, press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> and type "*Remote*". Choose *Add remote* and supply the url to your remote GitHub repository.
+   If you do it from VS Code, press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> and type "*Remote*". Choose *Add remote* and supply the url to your remote GitHub repository.
 
 3. Run `git push -u origin master`
 
@@ -129,9 +129,9 @@ If this succeeded you should now see the GitHub updated repository.
 
 ***
 
-**Note:** If you created the GitHub repository with a license file `git push - origin master` will fail and say *Updates were rejected because the tip of your current branch is behind it's remote counterpart*. In other words, the GitHub repository has work that you don't have locally. In this case the license file.
+**Note:** If you created the GitHub repository with a license file `git push -u origin master` will fail and say *Updates were rejected because the tip of your current branch is behind it's remote counterpart*. In other words, the GitHub repository has work that you don't have locally. In this case the license file.
 
-Then it asks you to `pull` down the changes from GitHub to get them merged into your local work. When  that's done, you can `push`. The reason that this is happening is that a `push` can only happen automatically if the `merge` into the remote is of type *fast-forward*. By creating the license file on GitHub the remote `master` and the local `master` have diverged.
+Then it asks you to `pull` down the changes from GitHub to get them merged into your local work. When that's done, you can `push`. The reason this is happening is that a `push` can only happen automatically if the `merge` into the remote is of type *fast-forward*. By creating the license file on GitHub the remote `master` and the local `master` have diverged.
 
 To solve this, `pull` the changes down like this:
 
