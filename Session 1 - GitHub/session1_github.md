@@ -56,11 +56,12 @@ On the other hand, if commits have been made to the local repository they can be
 
 **The local branch `origin/master` is a cached version of the remote branch `master`.**
 
-You have an `origin/master` on your local machine. This is a ***read-only*** branch that You can't commit to. It's a so-called *bare repository*, which has no working tree (editable files). The `get fetch origin <branch>` command can be used to update this cached version of the remote
+You have an `origin/master` on your local machine. This is a ***read-only*** branch that You can't commit to. It's a so-called *bare repository*, which has no working tree (editable files). The `get fetch origin <branch>` command can be used to update this cached version of the remote.
 
-This implies that if you checkout `origin/master`, or any other remote branch for that matter, you will be in ***detached head*** state. *Detached head* means that what's currently checked out is not a local branch.
+This implies that if you checkout `origin/master` you will be in ***detached head*** state. *Detached head* means that you're currently checking out a specific snapshot in the commit history away from any of the branches.
+Branches can be initiated from this state but commits should generally not be made here as they would be outside the context of a branch and thereby easily lost.
 
-Other branches in the remote repository will have the name `origin/branch_name`
+Other remote branches will similarly named (`origin/<branch>`) bare repositories.
 
 ## Forking
 
