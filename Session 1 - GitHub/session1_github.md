@@ -83,7 +83,79 @@ This is a common way to contribute to projects where you are not part of the "co
 
 ## Visualizing a two-person workflow
 
-<***Insert diagram with two different machines and a remote repo. Each machine should periodically push and pull from master to share and retrieve updated work.***>
+The diagrams below try to depict how a two-person workflow might be.
+
+### Step 0
+
+The situation starts with **Person A**, **Person B** and a **Remote Repository** all having completely synced history in the form of a single commit **C1**.
+
+The remote repository could be located on GitHub.
+
+![alt text](img/two_person_workflow0.svg)
+
+### Step 1
+
+**Person A** starts working and creates `commit` **C2**.
+
+![alt text](img/two_person_workflow1.svg)
+
+### Step 2
+
+**Person A** wants to share the new work and makes a `push` to update the remote repository with the changes in **C2**.
+
+As the local branch `origin/master` is tracking the remote `master`, it is updated too by the `push`.
+
+![alt text](img/two_person_workflow2.svg)
+
+### Step 3
+
+**Person B** wants to see **Person A**'s changes and incorporate them into his/her own work. This is done by a `pull` operation, which updates the local `master` so it now includes **C2**.
+
+![alt text](img/two_person_workflow3.svg)
+
+### Step 4
+
+**Person B** continues working and creates `commit` **C3** and **C4**.
+
+![alt text](img/two_person_workflow4.svg)
+
+### Step 5
+
+**Person B** performs a `push` of the **C3** and **C4** changes and updates the remote repository.
+
+![alt text](img/two_person_workflow5.svg)
+
+### Step 6
+
+**Person A** wants to see what **Person B** has been working on, but doesn't necessarily want to incorporate the changes right away. The changes since last communication with the remote server can be downloaded to the local `origin/master` *without* a `merge` them directly into the working copy of `master`.
+
+This operation is called `fetch`.
+
+Doing a `fetch` in this scenario updates **Person A**'s `origin/master` with commits **C3** and **C4**.
+
+![alt text](img/two_person_workflow6.svg)
+
+### Step 7
+
+**Person A** decides that the local working copy of `master` can be updated with the commits **C3** and **C4**.
+
+The update is done via a standard `merge` operation, same as we did in the previous session.
+
+Thus, **Person A** wants to merge `origin/master` into `master`.
+
+Recall that when merging, the currently checked out branch is the one that is merged *into*. So **Person A** must make sure to have `master` checked out, after which the `merge` can be done as `git merge origin/master`.
+
+![alt text](img/two_person_workflow7.svg)
+
+### Comments to the above workflow
+
+* The above flow shows each person working "in turn" and then syncing to get the changes from the other person. In fact, **Person A** and **Person B** could be working simultaneously.
+
+  If they have diverged history and **Person A** pushes to remote, then a potential `push` *or* `pull` from **Person B** might lead two either an automatic 3-way `merge` or a `merge conflict`. In the case of an automatic `merge` there is no problem, but in case of a `merge conflict` it is up to **Person B** to resolve the conflict and then finish the `push`/`pull`.
+
+* Note that the commits to each persons local working copy of `master` could be in the form of a `merge` from a local branch. In fact, it's encouraged to work on a branch and then `merge` to `master` when it's done. This opposed to work directly on `master`. Choose what feels right in the situation.
+
+  Local branches are not depicted in the flow above to make visualizations simpler.
 
 ## Exercises
 

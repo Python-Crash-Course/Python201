@@ -581,6 +581,8 @@ git merge readme
 
 Check how `README.md` looks in `master` now. The changes you did in the `readme` branch should now be part of `master`.
 
+Since the `merge` is complete and `master` now contains all work in `readme`, it's safe to delete the `readme` branch. You can do so by `git branch -d readme`.
+
 ## Recap - Diagram of exercise flow
 
 The following tries to depict the workflow of solving the above exercises.
