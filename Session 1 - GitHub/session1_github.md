@@ -46,22 +46,34 @@ It's possible (but not common) to rename the main remote to something else, just
 
 You can have more than one remote repository. An example of this could be when *forking* a project. You will have your own fork as the *main* remote repository, i.e. `origin`. The existing project that you forked from could be called `upstream`.
 
-## Push and Pull Requests
+## Push and Pull
 
-Once a remote connection is established the `git pull origin <branch>` command can be used to pull all the latest commits from "branch" on origin into HEAD. I.e. cloning a remote branch into HEAD.
+Once a remote connection is established the `git pull origin <branch>` command can be used to pull all the latest commits from "branch" on origin into HEAD. I.e. merging a remote branch into HEAD.
 
-On the other hand, if commits have been made to the local repository they can be pushed to the origin with `git push origin <branch>`, where "branch" is the remote branch you want to push HEAD into. This is similar to cloning HEAD into a remote branch.
+On the other hand, if commits have been made to the local repository they can be pushed to the origin with `git push origin <branch>`, where "branch" is the remote branch you want to push HEAD into. This is similar to merging HEAD into a remote branch.
+
+## Push Request
+
+For remote repositories where you don't have push access, you instead file a pull request. I.e. you request the project maintainer to pull a branch from your shared repository into the his repository.
+The typical workflow is:
+
+1. Clone the official remote repository e.g. from Github
+2. Implement feature in dedicated local branch
+3. push the branch to a shared/public forked repository e.g. on GitHub
+4. File a pull request via e.g. GitHub
+5. The pull request goes through official code review with possible discussions and alterations.
+6. Project maintainer merges it into the official repository and/or closes the pull request
 
 ## origin/master
 
 **The local branch `origin/master` is a cached version of the remote branch `master`.**
 
-You have an `origin/master` on your local machine. This is a ***read-only*** branch that You can't commit to. It's a so-called *bare repository*, which has no working tree (editable files). The `get fetch origin <branch>` command can be used to update this cached version of the remote.
+You have an `origin/master` on your local machine. This is a ***read-only*** branch that You can't commit to. It's a so-called *bare repository*, which has no working tree (editable files). The `get fetch origin <branch>` command can be used to update this cached version of the remote (the pull operation is actually just a fetch followed by a merge).
 
 This implies that if you checkout `origin/master` you will be in ***detached head*** state. *Detached head* means that you're currently checking out a specific snapshot in the commit history away from any of the branches.
 Branches can be initiated from this state but commits should generally not be made here as they would be outside the context of a branch and thereby easily lost.
 
-Other remote branches will similarly named (`origin/<branch>`) bare repositories.
+Other remote branches would generate similar local bare repositories named `origin/<branch>`.
 
 ## Forking
 
@@ -69,18 +81,12 @@ Other remote branches will similarly named (`origin/<branch>`) bare repositories
 
 You could `clone` the repository and do some changes locally, but where do you go from there? A `push` to the remote repo would affect the existing project, which is not what you want.
 
-This is where **Forking** comes in. **Forking** a repository means to copy it to your own remote repository. You can now `clone` your own repository and `push` without affecting the existing one that you forked from.
+This is where **Forking** comes in. **Forking** a repository means to copy it to your own remote repository. You can now `clone` your own remote repository and `push` without affecting the original one that you forked from.
 
-This does not hinder the possibility of merging your new code into the existing project though. You can submit a *Pull Request* from your own repository to let the maintainer know that you have a potential contribution.
+This does not hinder the possibility of merging your code changes into the original project though. You can submit a *Pull Request* from your own remote repository to let the maintainer know that you have a potential contribution.
 This is a common way to contribute to projects where you are not part of the "core team". If you see a bug, you can fix it yourself this way if you're up for it.
 
 *See more about forking [here](https://help.github.com/en/github/getting-started-with-github/fork-a-repo).*
-
-## Issues
-
-<***Placeholder for description***>
-
-
 
 ## Visualizing a two-person workflow
 
@@ -161,7 +167,7 @@ Recall that when merging, the currently checked out branch is the one that is me
 ## Exercises
 
 Before starting these exercises, you should have a ***local Git repository*** created for version controlling the contents we develop for this course.
-If you don't have that yet, please do the [Session 1 exercises](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md#exercises) before starting these.
+If you don't have that yet, please do the [Session 0 exercises](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md#exercises) before starting these.
 
 ## Exercise 1
 
