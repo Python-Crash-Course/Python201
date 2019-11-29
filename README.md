@@ -6,8 +6,8 @@ This GitHub repository contains material for an intermediate Python course held 
 
 ## Sessions Notes and Exercises
 
-* [Session 0 - Git](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md#git)
-* [Session 1 - GitHub](https://github.com/Python-Crash-Course/Python201/blob/master/Session%201%20-%20GitHub/github.md#github)
+* [Session 0 - Git](https://python-crash-course.github.io/Python201/Session%200%20-%20Git/session0_git.html#git)
+* [Session 1 - GitHub](https://python-crash-course.github.io/Python201/Session%201%20-%20GitHub/session1_github.html#git-recap)
 * Session 2 - Plotting and Vizualization
 * Session 3 - Data manipulation with Pandas
 * Session 4 - Object-Oriented Programming 1/3
@@ -19,8 +19,8 @@ This GitHub repository contains material for an intermediate Python course held 
 
 ## Exercise Solutions
 
-* [Session 0](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md#exercises)
-* [Session 1](https://github.com/Python-Crash-Course/Python201/blob/master/Session%201%20-%20GitHub/session1_github.md#exercises)
+* [Session 0](https://python-crash-course.github.io/Python201/Session%200%20-%20Git/session0_git.html#exercises)
+* [Session 1](https://python-crash-course.github.io/Python201/Session%201%20-%20GitHub/session1_github.html#exercises)
 * Session 2
 * Session 3
 * Session 4
