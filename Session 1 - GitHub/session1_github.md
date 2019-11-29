@@ -2,9 +2,9 @@
 
 Last time we talked about the general idea behind Git and how we work on local repositories.
 
-We learned how to initiate a new local repository using the `git init` command, how to see the change status with `git status`, how to stage changes with `git add` and finally commit them with the `git commit -m "<message>"` command. The last two commands can even be merged into one `git commit -am "<message>"`.
+We learned how to initiate a new local repository using the `git init` command, how to see the see the current status with `git status`, how to stage changes with `git add` and finally commit them with the `git commit -m "<message>"` command. The last two commands can even be merged into one `git commit -am "<message>"`.
 
-We can see the commit history with `git log --oneline` and move the HEAD to previous commits with  `git checkout <sha>` (or other branches with `git checkout <branch>`).
+We can see the commit history with `git log --oneline` and move the HEAD to previous commits with  `git checkout <sha>`, where `<sha>` is a so-called *hash* value. Think of it as an ID-number associated with each commit. We can also checkout other branches with `git checkout <branch>`).
 
 We can create a new branch from HEAD with `git branch <new-branch-name>` and then move HEAD to the new branch with `git checkout <branch>` or combine these two commands with `git checkout -b <new-branch-name>`.
 The `git branch` command can also be used to see an overview of the current branches with HEAD'ed branch shown with a **"\*"**.
@@ -19,7 +19,7 @@ Finally we talked about how we can merge a given branch into HEAD with `git merg
   <img src="img/GitHub_Logo.png" width="300"/>
 </p>
 
-GitHub is a website that host Git repositories.
+GitHub is a website that hosts Git repositories.
 It was founded in 2008 and was in 2018 acquired by Microsoft. It now have more than 40 million people working on over 100 million projects!
 
 ## Remote Repositories
