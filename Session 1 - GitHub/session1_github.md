@@ -26,13 +26,13 @@ Up until now we have only talked about local repositories. I.e. operations where
 
 Now we will talk about how to use remote repositories for collaboration and/or sharing work.
 
-We use a remote GitHub repository as the example here but it's not different working against a remote repository on a private on-premise Git server used by many companies.
+We use a remote GitHub repository as the example here but it's not different than working against a remote repository on a private on-premise Git server used by many companies.
 
 ## Remote add or Clone
 
-There's two ways to get started:
+There are two ways to get started:
 
-- If you already got a local Git repository you can connect it to a remote repository using `git remote add origin <url_to_remote_repo>`, where "origin" is the default name convention used to represent the remote repository the repository originate from.
+- If you already got a local Git repository you can connect it to a remote repository using `git remote add origin <url_to_remote_repo>`, where `origin` is the default name convention used to represent the remote repository the repository originate from.
 - Alternatively, you can create a local repository by cloning a remote repository with `git clone <url_to_remote_repo>`.
 
 ## origin
@@ -52,17 +52,19 @@ Once a remote connection is established the `git pull origin <branch>` command c
 
 On the other hand, if commits have been made to the local repository they can be pushed to the origin with `git push origin <branch>`, where "branch" is the remote branch you want to push HEAD into. This is similar to merging HEAD into a remote branch.
 
-## Push Request
+## Pull Request
 
 For remote repositories where you don't have push access, you instead file a pull request. I.e. you request the project maintainer to pull a branch from your shared repository into the his repository.
 The typical workflow is:
 
 1. Clone the official remote repository e.g. from Github
-2. Implement feature in dedicated local branch
-3. push the branch to a shared/public forked repository e.g. on GitHub
+2. Implement a feature in a dedicated local branch
+3. Push the branch to a shared/public forked repository e.g. on GitHub
 4. File a pull request via e.g. GitHub
 5. The pull request goes through official code review with possible discussions and alterations.
 6. Project maintainer merges it into the official repository and/or closes the pull request
+
+Pull Requests can also be used even if you already have push access as part of the QA process. One maintainer can submit a Pull Request to another maintainer to get the new code reviewed.
 
 ## origin/master
 
@@ -185,39 +187,47 @@ Go to [github.com](https://github.com/) and create an account if you don't alrea
 
 3. Choose whether you want your repository to be public or private.
 
-4. We have already created a `README.md` and a `.gitignore` file in the Session 0 exercises, so don't check those boxes. If you'd like, you can add a licence to the repository to let people know under which circumstances they can use your code.
+4. Click *Create repository*.
 
-5. Click *Create repository*.
-
-> Next to the license box there is an info icon if you are more curious which license to choose for your repository. If you want to add one but don't care which, just take MIT License. It's the most permissive one.
+> Note that it's possible to create the repository with a `README.md`, `.gitignore` and a license file. If you choose to create a non-empty repository it makes the process of uploading your code a little more cumbersome. **Therefore it's recommended to start with an emtpy remote repository**.
+> Furthermore, we have already created a `README.md` and a `.gitignore` file in the Session 0 exercises, so that will not be necessary to do from GitHub.
+> If you'd like, you can add a licence to the repository to let people know under which circumstances they can use your code, you can do so later.
 
 ## Exercise 3
 
 ***Sync local repository with GitHub***
 
-You should now see a clean repository that looks something like this
+You should now see an empty repository that looks something like this
 
-![alt text](img/clean_repo.png)
+![alt text](img/empty_repo.png)
 
-You will now `push` your local code this remote repository.
+You will now `push` your local code to this remote repository. In fact GitHub tells us how to do this since we created an empty repository. 
 
-1. Click the green *Clone or download* button and copy the url.
-
-2. Run `git remote add origin <url>`
+1. Copy the url. and run `git remote add origin <url>`
 
    If you do it from VS Code, press <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> and type "*Remote*". Choose *Add remote* and supply the url to your remote GitHub repository.
 
-3. Run `git push -u origin master`
+2. Run `git push -u origin master`
 
    This pushes you local changes to the remote `master` branch on GitHub and creates a link between your local `master` and the `master` on GitHub.
    Thus, subsequent pushes can be done as just `git push` as Git will now know which remote branch to update.
    If you run `git push` without having the link set up beforehand, Git will say something like "*The current branch has no upstream branch*" and ask you to create it before (or while) pushing.
 
-If this succeeded you should now see the GitHub updated repository.
+If this succeeded you should now see the GitHub updated repository that looks similar to the one below
+
+![alt text](img/repo_after_push.png)
+
+Notice that the `README.md` is automatically shown as the "landing page" for the repository.
+
+***Your remote repository on GitHub is now ready for you to continuously `push` work during the next remaining sessions of the course.***
 
 ***
 
-**Note:** If you created the GitHub repository with a license file `git push -u origin master` will fail and say *Updates were rejected because the tip of your current branch is behind it's remote counterpart*. In other words, the GitHub repository has work that you don't have locally. In this case the license file.
+### If you push to an non-empty repository
+
+***This is only relevant in case you want to do a first-time push to a non-empty repository. If you already got the push to work you can skip this section.***
+
+If you created the GitHub repository with a license file, then `git push -u origin master` will fail and say *Updates were rejected because the tip of your current branch is behind it's remote counterpart*. In other words, the GitHub repository has work that you don't have locally. In this case the license file.
 
 Then it asks you to `pull` down the changes from GitHub to get them merged into your local work. When that's done, you can `push`. The reason this is happening is that a `push` can only happen automatically if the `merge` into the remote is of type *fast-forward*. By creating the license file on GitHub the remote `master` and the local `master` have diverged.
 
@@ -234,8 +244,6 @@ The `git push` can now do a *fast-forward* merge with the GitHub remote because 
 Afterwards, you should be able to run `git push -u origin master` and see your updated GitHub repository.
 
 The `--allow-unrelated-histories` flag will not be necessary for pulling next time, since the histories of the local and remote are now *related*.
-
-***Your remote repository on GitHub is now ready for you to continuously `push` work during the next remaining sessions of the course.***
 
 ## Exercise 4
 
