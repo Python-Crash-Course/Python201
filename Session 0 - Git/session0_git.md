@@ -1,7 +1,7 @@
 
 # Git
 
-<img src="img/Logos/Git_Logo.png" alt="alt text" width="200">
+<img src="img/Logos/Git_Logo.png" alt="alt text" width="200"/>
 
 ## What is Git?
 
@@ -57,7 +57,7 @@ Let's move on with that :rocket:
 - **Which means:**
   Everyone has a local `clone` of the entire project and its history
 
-<img src="https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/GitBasics/Distr_version_control.PNG" alt="alt text" width="400">
+<img src="img/GitBasics/Distr_version_control.PNG" alt="alt text" width="400"/>
 
 ## Advantages of Git
 
@@ -83,7 +83,7 @@ Initialize a Git repository inside a directory by typing
 git init
 ```
 
-![alt text](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/GitBasics/Git_Bash.PNG)
+![alt text](img/GitBasics/Git_Bash.PNG)
 
 This will create the hidden `.git` folder in the current directory.
 
@@ -113,7 +113,7 @@ A `commit` records the state of all files, even unchanged ones.
 
 Git uses pointers instead of duplicating unchanged files.
 
-![alt text](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/GitBasics/Snapshots_over_time.PNG)
+![alt text](img/GitBasics/Snapshots_over_time.PNG)
 
 ## Status of files
 
@@ -124,7 +124,7 @@ Grey operations
 - **Tracked**
 Red operations
 
-<img src="https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/GitBasics/status_of_files.PNG" alt="alt text" width="500">
+<img src="img/GitBasics/status_of_files.PNG" alt="alt text" width="500"/>
 
 ## Three local states
 
@@ -139,7 +139,7 @@ File is in the staging area ready to be included in the next `commit`
 **3. Committed**
 The file has been checked in and Git has taken a snapshot of the repository state
 
-<img src="https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/GitBasics/Three_states.PNG" alt="alt text" width="400">
+<img src="img/GitBasics/Three_states.PNG" alt="alt text" width="400"/>
 
 ## Ignoring files
 
@@ -154,7 +154,7 @@ The `.gitignore` file inside the repository controls what is being version contr
   - Dummy data sets for testing
   - Generated files
 
-<img src="https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/GitBasics/gitignore_example.PNG" alt="alt text" width="300">
+<img src="img/GitBasics/gitignore_example.PNG" alt="alt text" width="300"/>
 
 # Branching
 
@@ -318,7 +318,7 @@ Merge conflicts can be resolved in the editor.
 
 ## Advanced workflow example (often referred to as Git Flow)
 
-![alt text](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/Workflow/GitFlow.PNG)
+![alt text](img/Workflow/GitFlow.PNG)
 
 # Git in VS Code
 
@@ -343,11 +343,11 @@ git init
 
 From VS Code the same operation looks like this:
 
-![alt text](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/VScode/git_init_from_vscode.PNG)
+![alt text](img/VScode/git_init_from_vscode.PNG)
 
 ## VS Code - Source control tab
 
-![width:850pt](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/VScode/source_control_tab.PNG)
+![width:850pt](img/VScode/source_control_tab.PNG)
 
 # Git for non-text files
 
@@ -473,7 +473,7 @@ Now you have created two files and modified them, and Git has spotted this.
 
 If you are using VS Code, check the Source Control tab on the left pane. The CHANGES tab will reveal all modified files that are not ignored via `.gitignore`.
 
-![alt text](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/Exercises/VSCode_changes.PNG)
+![alt text](img/Exercises/VSCode_changes.PNG)
 
 However, **the files are not yet under version control**. The green **U** denotes that the files are *untracked*. They need to be explicitly added to Git.
 
@@ -487,8 +487,7 @@ git status
 
 See the entire history of what we did so far in the image.
 
-![alt text](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/img/Exercises/git_status.PNG)
-
+![alt text](img/Exercises/git_status.PNG)
 
 **Stage the files `README.md` and `.gitignore`** to get them ready to go into the next `commit`.
 
