@@ -20,7 +20,7 @@ This GitHub repository contains material for an intermediate Python course held 
 ## Exercise Solutions
 
 * [Session 0](https://github.com/Python-Crash-Course/Python201/blob/master/Session%200%20-%20Git/session0_git.md#exercises)
-* Session 1
+* [Session 1](https://github.com/Python-Crash-Course/Python201/blob/master/Session%201%20-%20GitHub/session1_github.md#exercises)
 * Session 2
 * Session 3
 * Session 4
