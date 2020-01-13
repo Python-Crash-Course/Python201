@@ -16,8 +16,8 @@ This GitHub repository contains material for an intermediate Python course held 
 
 * [Session 0 - Git](https://python-crash-course.github.io/Python201/Session%200%20-%20Git/session0_git.html#git)
 * [Session 1 - GitHub](https://python-crash-course.github.io/Python201/Session%201%20-%20GitHub/session1_github.html#git-recap)
-* [Session 2 - Utility functions and plotting](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%202%20-%20Utility%20functions/Session%202%20-%20Utility%20functions.ipynb)
-* Session 3 - Data manipulation with Pandas
+* [Session 2 - Utility Functions and Plotting](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%202%20-%20Utility%20functions/Session%202%20-%20Utility%20functions.ipynb)
+* [Session 3 - Advanced Functions](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%203%20-%20Advanced%20Functions/Session%203%20-%20Advanced%20Functions.ipynb)
 * Session 4 - Object-Oriented Programming 1/3
 * Session 5 - Object-Oriented Programming 2/3
 * Session 6 - Object-Oriented Programming 3/3
@@ -30,7 +30,7 @@ This GitHub repository contains material for an intermediate Python course held 
 * [Session 0](https://python-crash-course.github.io/Python201/Session%200%20-%20Git/session0_git.html#exercises)
 * [Session 1](https://python-crash-course.github.io/Python201/Session%201%20-%20GitHub/session1_github.html#exercises)
 * [Session 2](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%202%20-%20Utility%20functions/Session%202%20-%20Exercise%20solutions.ipynb)
-* Session 3
+* [Session 3](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%203%20-%20Advanced%20Functions/Session%203%20-%20Exercise%20solutions.ipynb)
 * Session 4
 * Session 5
 * Session 6
