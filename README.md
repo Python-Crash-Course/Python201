@@ -8,7 +8,7 @@
 [![Issues Closed](https://img.shields.io/github/issues-closed-raw/Python-Crash-Course/Python201)](https://github.com/Python-Crash-Course/Python201/issues)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/Python-Crash-Course/Python201)](https://github.com/Python-Crash-Course/Python201/commits/master)
-[![Contributors](https://img.shields.io/github/contributors/Python-Crash-Course/Python201)](https://github.com/orgs/Python-Crash-Course/people)
+[![Contributors](https://img.shields.io/github/contributors/Python-Crash-Course/Python201)](https://github.com/Python-Crash-Course/Python201/graphs/contributors)
 
 This GitHub repository contains material for an intermediate Python course held in COWI Lyngby during 2019/2020. Check out its [GitHub page](https://python-crash-course.github.io/Python201/).
 
