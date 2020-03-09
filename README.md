@@ -21,8 +21,8 @@ This GitHub repository contains material for an intermediate Python course held 
 * [Session 4 - Object-Oriented Programming 1/3](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%204%20-%20Object-Oriented%20Programming%20I/Session%204%20-%20Object-Oriented%20Programming%20I.ipynb)
 * [Session 5 - Object-Oriented Programming 2/3](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%205%20-%20Object-Oriented%20Programming%20II/Session%205%20-%20Object-Oriented%20Programming%20II.ipynb)
 * [Session 6 - Object-Oriented Programming 3/3](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%206%20-%20Object-Oriented%20Programming%20III/Session%206%20-%20Object-Oriented%20Programming%20III.ipynb)
-* Session 7 - PDF manipulations with `PyMuPDF`
-* Session 8 - Interfacing with Excel via `xlwings`
+* [Session 7 - Interaction between Excel](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%207%20-%20Interaction%20with%20Excel/Session7_Interaction_with_Excel.ipynb)
+* Session 8 - PDF manipulations with `PyMuPDF`
 * Session 9 - Where to go from here (inspiration)
 
 ## Exercise Solutions
@@ -34,6 +34,6 @@ This GitHub repository contains material for an intermediate Python course held 
 * [Session 4](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%204%20-%20Object-Oriented%20Programming%20I/Session%204%20-%20Exercise%20solutions.ipynb)
 * [Session 5](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%205%20-%20Object-Oriented%20Programming%20II/Session%205%20-%20Exercise%20solutions.ipynb)
 * [Session 6](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%206%20-%20Object-Oriented%20Programming%20III/Session%206%20-%20Exercise%20solutions.ipynb)
-* Session 7
+* [Session 7](https://nbviewer.jupyter.org/github/Python-Crash-Course/Python201/blob/master/Session%207%20-%20Interaction%20with%20Excel/Session7_Exercise_Solutions.ipynb)
 * Session 8
 * Session 9
