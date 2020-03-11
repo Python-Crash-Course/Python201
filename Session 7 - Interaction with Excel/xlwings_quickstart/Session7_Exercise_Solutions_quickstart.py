@@ -8,7 +8,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-
 @xw.sub  # only required if you want to import it or run it via UDF Server
 def main():
     wb = xw.Book.caller()
@@ -30,11 +29,11 @@ def create_daterange_dataframe(filename, start_date, end_date):
     # Combine into a full path to the dataset file
     full_filename = f'{cwd}\\{filename}'
 
-    df_raw = pd.read_csv(filename)
+    df_raw = pd.read_csv(full_filename)
 
     # Change the "raw" dates into datetime objects so they can be filtered
     df_raw['Date'] = pd.to_datetime(df_raw['Date'])
-    
+
     # Set the date as the index of the dataframe
     df = df_raw.set_index('Date')
 
@@ -45,6 +44,9 @@ def create_daterange_dataframe(filename, start_date, end_date):
 @xw.sub
 def update_weather_plot():
     '''Macro function to interact with Excel'''
+
+    # Mock the calling Excel file
+    xw.books.active.set_mock_caller()
 
     # Get the workbook that is calling the macro and set sheet
     wb = xw.Book.caller()
@@ -67,10 +69,10 @@ def update_weather_plot():
 
     # Insert figure into sheet
     sht3.pictures.add(fig, name='MyPlot', update=True)
-    
+
 # -----------------------------------------------------------------------------
 
-    
+
 if __name__ == "__main__":
     xw.books.active.set_mock_caller()
     main()
@@ -82,9 +84,9 @@ if __name__ == "__main__":
 
     # Establish connection to the workbook
     wb = xw.Book.caller()
-    
+
     sht2 = wb.sheets['Sheet2']
-    
+
     sht2.range('A2').options(transpose=True).value = np.arange(-50, 51, 5)
 
     # -------------------------------------------------------------------------
